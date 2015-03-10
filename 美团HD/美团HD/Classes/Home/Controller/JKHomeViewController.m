@@ -7,6 +7,7 @@
 //
 
 #import "JKHomeViewController.h"
+#import "UIBarButtonItem+JKExtension.h"
 
 @interface JKHomeViewController ()
 
@@ -44,25 +45,15 @@ static NSString * const reuseIdentifier = @"Cell";
     self.navigationItem.leftBarButtonItem = logoItem;
 }
 // 设置导航栏右边
-- (void)setUpNavRight {
-    UIButton *searchBtn = [[UIButton alloc] init];
-    [searchBtn setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
-    [searchBtn setImage:[UIImage imageNamed:@"icon_search_highlighted"] forState:UIControlStateHighlighted];
-    searchBtn.size = searchBtn.currentImage.size;
-    searchBtn.width = 50;
-    [searchBtn addTarget:self action:@selector(searchBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+- (void)setUpNavRight {			
+    
     // 将按钮包装成自定义 UIBarButtonItem,因为导航栏中只能放 UIBarButtonItem
-    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
+    UIBarButtonItem *searchItem = [UIBarButtonItem itemWithImage:@"icon_search" highImage:@"icon_search_highlighted" target:self action:@selector(searchBtnClicked)];
+    searchItem.customView.width = 50;
     
-    UIButton *mapBtn = [[UIButton alloc] init];
-    [mapBtn setImage:[UIImage imageNamed:@"icon_map"] forState:UIControlStateNormal];
-    [mapBtn setImage:[UIImage imageNamed:@"icon_map_highlighted"] forState:UIControlStateHighlighted];
-    mapBtn.size = mapBtn.currentImage.size;
-    mapBtn.width = searchBtn.width;
-    [mapBtn addTarget:self action:@selector(mapBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *mapItem = [[UIBarButtonItem alloc] initWithCustomView:mapBtn];
+    UIBarButtonItem *mapItem = [UIBarButtonItem itemWithImage:@"icon_map" highImage:@"icon_map_highlighted" target:self action:@selector(mapBtnClicked)];
+    mapItem.customView.width = searchItem.customView.width;
     
-//    self.navigationItem.rightBarButtonItem = searchItem;
     self.navigationItem.rightBarButtonItems = @[mapItem,searchItem];
 }
 
