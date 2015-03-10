@@ -29,30 +29,52 @@ static NSString * const reuseIdentifier = @"Cell";
     // 设置导航栏右边
     [self setUpNavRight];
     
-    
-    
-    // Register cell classes
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
 }
 
 // 设置导航栏左边
 - (void)setUpNavLeft {
     
-//    UIImage *image = [UIImage imageNamed:@"icon_meituan_logo"];
-//    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:nil action:nil];
-//    
-//    self.navigationItem.leftBarButtonItem = logoItem;
+    UIImage *image = [UIImage imageNamed:@"icon_meituan_logo"];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    // 设置图片的渲染颜色
+    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
+    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.leftBarButtonItem = logoItem;
 }
 // 设置导航栏右边
 - (void)setUpNavRight {
+    UIButton *searchBtn = [[UIButton alloc] init];
+    [searchBtn setImage:[UIImage imageNamed:@"icon_search"] forState:UIControlStateNormal];
+    [searchBtn setImage:[UIImage imageNamed:@"icon_search_highlighted"] forState:UIControlStateHighlighted];
+    searchBtn.size = searchBtn.currentImage.size;
+    searchBtn.width = 50;
+    [searchBtn addTarget:self action:@selector(searchBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    // 将按钮包装成自定义 UIBarButtonItem,因为导航栏中只能放 UIBarButtonItem
+    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc] initWithCustomView:searchBtn];
     
+    UIButton *mapBtn = [[UIButton alloc] init];
+    [mapBtn setImage:[UIImage imageNamed:@"icon_map"] forState:UIControlStateNormal];
+    [mapBtn setImage:[UIImage imageNamed:@"icon_map_highlighted"] forState:UIControlStateHighlighted];
+    mapBtn.size = mapBtn.currentImage.size;
+    mapBtn.width = searchBtn.width;
+    [mapBtn addTarget:self action:@selector(mapBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *mapItem = [[UIBarButtonItem alloc] initWithCustomView:mapBtn];
     
+//    self.navigationItem.rightBarButtonItem = searchItem;
+    self.navigationItem.rightBarButtonItems = @[mapItem,searchItem];
 }
+
+#pragma mark - 按钮点击监听方法
+- (void)searchBtnClicked {
+    JKLog(@"searchBtnClicked");
+}
+- (void)mapBtnClicked {
+    JKLog(@"mapBtnClicked");
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

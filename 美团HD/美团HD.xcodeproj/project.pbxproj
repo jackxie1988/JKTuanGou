@@ -18,6 +18,7 @@
 		BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93C71AAEAD5100DCE9E3 /* DPAPI.m */; };
 		BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */; };
 		BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */; };
+		BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF772801AAF24D8001F693C /* UIView+JKExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JKSingleton.h; path = Other/Lib/JKSingleton.h; sourceTree = "<group>"; };
 		BC8D88EE1AAED7E60066F7DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Other/Lib/PrefixHeader.pch; sourceTree = "<group>"; };
+		BCF7727F1AAF24D8001F693C /* UIView+JKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKExtension.h"; sourceTree = "<group>"; };
+		BCF772801AAF24D8001F693C /* UIView+JKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 			children = (
 				BC2B3C2B1AAF013E00DFA275 /* JKNavigationController.h */,
 				BC2B3C2C1AAF013E00DFA275 /* JKNavigationController.m */,
+				BCF7727F1AAF24D8001F693C /* UIView+JKExtension.h */,
+				BCF772801AAF24D8001F693C /* UIView+JKExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -323,6 +328,7 @@
 				BC2B3C2D1AAF013E00DFA275 /* JKNavigationController.m in Sources */,
 				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
+				BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */,
 				BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */,
 				BC6B93891AADF46E00DCE9E3 /* main.m in Sources */,
 			);
