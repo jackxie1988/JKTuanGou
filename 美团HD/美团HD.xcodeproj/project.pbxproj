@@ -11,6 +11,8 @@
 		BC2B3C301AAF016900DFA275 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2B3C2F1AAF016900DFA275 /* ViewController.m */; };
 		BC2B3C361AAF2E8900DFA275 /* JKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2B3C341AAF2E8900DFA275 /* JKNavigationController.m */; };
 		BC2B3C391AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2B3C381AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m */; };
+		BC2B3C3B1AAF3A8C00DFA275 /* JKHomeTopItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2B3C3A1AAF3A8C00DFA275 /* JKHomeTopItem.xib */; };
+		BC2B3C3E1AAF3AA500DFA275 /* JKHomeTopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2B3C3D1AAF3AA500DFA275 /* JKHomeTopItem.m */; };
 		BC6B93891AADF46E00DCE9E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93881AADF46E00DCE9E3 /* main.m */; };
 		BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B938B1AADF46E00DCE9E3 /* AppDelegate.m */; };
 		BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6B93901AADF46E00DCE9E3 /* Main.storyboard */; };
@@ -41,6 +43,9 @@
 		BC2B3C341AAF2E8900DFA275 /* JKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKNavigationController.m; sourceTree = "<group>"; };
 		BC2B3C371AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JKExtension.h"; sourceTree = "<group>"; };
 		BC2B3C381AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JKExtension.m"; sourceTree = "<group>"; };
+		BC2B3C3A1AAF3A8C00DFA275 /* JKHomeTopItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKHomeTopItem.xib; sourceTree = "<group>"; };
+		BC2B3C3C1AAF3AA500DFA275 /* JKHomeTopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKHomeTopItem.h; sourceTree = "<group>"; };
+		BC2B3C3D1AAF3AA500DFA275 /* JKHomeTopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKHomeTopItem.m; sourceTree = "<group>"; };
 		BC6B93831AADF46E00DCE9E3 /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6B93871AADF46E00DCE9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC6B93881AADF46E00DCE9E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -118,6 +123,9 @@
 		BC2B3C231AAEF64D00DFA275 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC2B3C3A1AAF3A8C00DFA275 /* JKHomeTopItem.xib */,
+				BC2B3C3C1AAF3AA500DFA275 /* JKHomeTopItem.h */,
+				BC2B3C3D1AAF3AA500DFA275 /* JKHomeTopItem.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +334,7 @@
 			files = (
 				BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */,
 				BC6B93941AADF46E00DCE9E3 /* Images.xcassets in Resources */,
+				BC2B3C3B1AAF3A8C00DFA275 /* JKHomeTopItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +357,7 @@
 				BC2B3C301AAF016900DFA275 /* ViewController.m in Sources */,
 				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC2B3C361AAF2E8900DFA275 /* JKNavigationController.m in Sources */,
+				BC2B3C3E1AAF3AA500DFA275 /* JKHomeTopItem.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
 				BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */,
 				BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */,

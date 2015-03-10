@@ -8,6 +8,7 @@
 
 #import "JKHomeViewController.h"
 #import "UIBarButtonItem+JKExtension.h"
+#import "JKHomeTopItem.h"
 
 @interface JKHomeViewController ()
 
@@ -37,13 +38,24 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)setUpNavLeft {
     
     UIImage *image = [UIImage imageNamed:@"icon_meituan_logo"];
-    
     // 设置图片的渲染颜色
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
     UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.leftBarButtonItem = logoItem;
+    
+    // 分类
+    JKHomeTopItem *catagory = [JKHomeTopItem item];
+    UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:catagory];
+    // 区域
+    JKHomeTopItem *district = [JKHomeTopItem item];
+    UIBarButtonItem *districtItem = [[UIBarButtonItem alloc] initWithCustomView:district];
+    // 排序
+    JKHomeTopItem *sort = [JKHomeTopItem item];
+    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sort];
+    
+    // 添加到 leftBarButtonItems 数组中
+    self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, districtItem, sortItem];
 }
+
 // 设置导航栏右边
 - (void)setUpNavRight {			
     
