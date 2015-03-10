@@ -19,14 +19,15 @@
     // 设置导航栏背景图片
     UINavigationBar *bar = [UINavigationBar appearance];
     UIImage *image = [UIImage imageNamed:@"bg_navigationBar_normal"];
-    JKLog(@"%@",image);
     [bar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

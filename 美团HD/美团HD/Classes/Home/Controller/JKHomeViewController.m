@@ -22,7 +22,12 @@ static NSString * const reuseIdentifier = @"Cell";
 //    self.view.backgroundColor = JKColor(230, 230, 230);
     self.collectionView.backgroundColor = JKColor(230, 230, 230);
     
-//    self.view == self.collectionView.superview
+    
+    // 设置导航栏左边
+    [self setUpNavLeft];
+    
+    // 设置导航栏右边
+    [self setUpNavRight];
     
     
     
@@ -30,6 +35,23 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+}
+
+// 设置导航栏左边
+- (void)setUpNavLeft {
+    
+//    UIImage *image = [UIImage imageNamed:@"icon_meituan_logo"];
+//    UIBarButtonItem *logoItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:nil action:nil];
+//    
+//    self.navigationItem.leftBarButtonItem = logoItem;
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"] style:UIBarButtonItemStylePlain target:nil action:nil];
+    
+}
+// 设置导航栏右边
+- (void)setUpNavRight {
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
