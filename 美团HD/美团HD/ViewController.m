@@ -22,12 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"city"] = @"北京";
     [[DPAPI sharedInstance] request:@"v1/deal/find_deals" params:params success:^(id result) {
-        NSLog(@"请求成功 - %@",result);
+        JKLog(@"请求成功 - %@",result);
     } failure:^(NSError *error) {
-        NSLog(@"请求失败");
+        JKLog(@"请求失败");
     }];
 }
 

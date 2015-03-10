@@ -50,6 +50,7 @@
 		BC8D88EA1AAEC37C0066F7DC /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
 		BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JKSingleton.h; path = Other/Lib/JKSingleton.h; sourceTree = "<group>"; };
+		BC8D88EE1AAED7E60066F7DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Other/Lib/PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 				BC6B93AC1AADF5C900DCE9E3 /* Home */,
 				BC6B93B01AADF5C900DCE9E3 /* Other */,
 				BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */,
+				BC8D88EE1AAED7E60066F7DC /* PrefixHeader.pch */,
 				BC6B938A1AADF46E00DCE9E3 /* AppDelegate.h */,
 				BC6B938B1AADF46E00DCE9E3 /* AppDelegate.m */,
 				BC6B93861AADF46E00DCE9E3 /* Supporting Files */,
@@ -433,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "美团HD/Other/Lib/PrefixHeader.pch";
 				INFOPLIST_FILE = "美团HD/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "美团HD/Other/Lib/PrefixHeader.pch";
 				INFOPLIST_FILE = "美团HD/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

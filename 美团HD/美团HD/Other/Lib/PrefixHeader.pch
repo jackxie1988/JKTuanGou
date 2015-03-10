@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  美团HD
+//
+//  Created by 谢聪捷 on 3/10/15.
+//  Copyright (c) 2015 Jack-Xie. All rights reserved.
+//
+
+#ifndef __HD_PrefixHeader_pch
+#define __HD_PrefixHeader_pch
+
+// 调试与发布的 Log
+#ifdef DEBUG
+#define JKLog(...) NSLog(__VA_ARGS__)
+#else
+#define JKLog(...)
+#endif
+
+// 颜色
+#define JKColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 通知中心
+#define JKNoteCenter [NSNotificationCenter defaultCenter]
+
+
+#endif
