@@ -19,7 +19,10 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+//    self.view.backgroundColor = JKColor(230, 230, 230);
+    self.collectionView.backgroundColor = JKColor(230, 230, 230);
     
+//    self.view == self.collectionView.superview
     
     
     
