@@ -12,7 +12,7 @@
 
 
 
-@interface ViewController ()<DPRequestDelegate>
+@interface ViewController ()
 
 
 @end
@@ -22,20 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    DPAPI *api = [[DPAPI alloc] init];
-    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"city"] = @"北京";
-    [api requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
-    
+    [[DPAPI sharedInstance] request:@"v1/deal/find_deals" params:params success:^(id result) {
+        NSLog(@"请求成功 - %@",result);
+    } failure:^(NSError *error) {
+        NSLog(@"请求失败");
+    }];
 }
 
-- (void)request:(DPRequest *)request didFailWithError:(NSError *)error {
-    NSLog(@"请求失败 - %@",error);
-}
-
-- (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result {
-    NSLog(@"请求成功 - %@",result);
-}
 
 @end

@@ -15,8 +15,8 @@
 		BC6B93971AADF46E00DCE9E3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC6B93951AADF46E00DCE9E3 /* LaunchScreen.xib */; };
 		BC6B93A31AADF46E00DCE9E3 /* __HDTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93A21AADF46E00DCE9E3 /* __HDTests.m */; };
 		BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93C71AAEAD5100DCE9E3 /* DPAPI.m */; };
-		BC6B93CC1AAEAD5100DCE9E3 /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93CA1AAEAD5100DCE9E3 /* DPRequest.m */; };
 		BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */; };
+		BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +46,10 @@
 		BC6B93C61AAEAD5100DCE9E3 /* DPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPAPI.h; sourceTree = "<group>"; };
 		BC6B93C71AAEAD5100DCE9E3 /* DPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPAPI.m; sourceTree = "<group>"; };
 		BC6B93C81AAEAD5100DCE9E3 /* DPConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPConstants.h; sourceTree = "<group>"; };
-		BC6B93C91AAEAD5100DCE9E3 /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
-		BC6B93CA1AAEAD5100DCE9E3 /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPConstants.m; sourceTree = "<group>"; };
+		BC8D88EA1AAEC37C0066F7DC /* DPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPRequest.h; sourceTree = "<group>"; };
+		BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
+		BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JKSingleton.h; path = Other/Lib/JKSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 			children = (
 				BC6B93AC1AADF5C900DCE9E3 /* Home */,
 				BC6B93B01AADF5C900DCE9E3 /* Other */,
+				BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */,
 				BC6B938A1AADF46E00DCE9E3 /* AppDelegate.h */,
 				BC6B938B1AADF46E00DCE9E3 /* AppDelegate.m */,
 				BC6B93861AADF46E00DCE9E3 /* Supporting Files */,
@@ -188,12 +190,12 @@
 		BC6B93B31AADF65B00DCE9E3 /* DP */ = {
 			isa = PBXGroup;
 			children = (
+				BC8D88EA1AAEC37C0066F7DC /* DPRequest.h */,
+				BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */,
 				BC6B93C61AAEAD5100DCE9E3 /* DPAPI.h */,
 				BC6B93C71AAEAD5100DCE9E3 /* DPAPI.m */,
 				BC6B93C81AAEAD5100DCE9E3 /* DPConstants.h */,
 				BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */,
-				BC6B93C91AAEAD5100DCE9E3 /* DPRequest.h */,
-				BC6B93CA1AAEAD5100DCE9E3 /* DPRequest.m */,
 			);
 			path = DP;
 			sourceTree = "<group>";
@@ -298,8 +300,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC6B93CC1AAEAD5100DCE9E3 /* DPRequest.m in Sources */,
 				BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */,
+				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
 				BC6B938F1AADF46E00DCE9E3 /* ViewController.m in Sources */,
 				BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */,
@@ -500,6 +502,7 @@
 				BC6B93A81AADF46E00DCE9E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC6B93A91AADF46E00DCE9E3 /* Build configuration list for PBXNativeTarget "美团HDTests" */ = {
 			isa = XCConfigurationList;
@@ -508,6 +511,7 @@
 				BC6B93AB1AADF46E00DCE9E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

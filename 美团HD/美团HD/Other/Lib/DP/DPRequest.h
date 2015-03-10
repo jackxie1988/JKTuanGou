@@ -8,12 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+//typedef void (^DPBlock)(id result, NSError *error);
+
+typedef void (^DPSuccess)(id json);
+typedef void (^DPFailure)(NSError *error);
+
 @class DPAPI;
 @protocol DPRequestDelegate;
 
 @interface DPRequest : NSObject
+/** 请求后的回调 */
+//@property (nonatomic, copy) DPBlock block;
 
-@property (nonatomic, unsafe_unretained) DPAPI *dpapi;
+/** 请求成功后的回调 */
+@property (nonatomic, copy) DPSuccess success;
+/** 请求失败后的回调 */
+@property (nonatomic, copy) DPFailure failure;
+
+//@property (nonatomic, copy) void (^success)(id json);
+//@property (nonatomic, copy) void (^failure)(NSError *error);
+
+@property (nonatomic, weak) DPAPI *dpapi;
 @property (nonatomic, strong) NSString *url;
 @property (nonatomic, strong) NSDictionary *params;
 @property (nonatomic, unsafe_unretained) id<DPRequestDelegate> delegate;

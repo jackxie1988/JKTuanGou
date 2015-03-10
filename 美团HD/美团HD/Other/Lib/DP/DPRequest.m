@@ -11,7 +11,7 @@
 #import "DPAPI.h"
 #import <CommonCrypto/CommonDigest.h>
 
-#define kDPRequestTimeOutInterval   10.0
+#define kDPRequestTimeOutInterval   180.0
 #define kDPRequestStringBoundary    @"9536429F8AAB441bA4055A74B72B57DE"
 
 @interface DPAPI ()
@@ -60,12 +60,8 @@
         [_delegate request:self didReceiveRawData:data];
     }
 	
-//	SBJsonParser *parser = [[SBJsonParser alloc] init];
-//    id result = [parser objectWithData:data];
     NSError *error = nil;
     id result = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    
-//	NSLog(@"return: \n%@", result);
     if (!result) {
 		NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:
 								  error, @"error", nil];
@@ -87,7 +83,6 @@
 			}
 		} else {
 			if ([status isEqualToString:@"ERROR"]) {
-				// TODO: 处理错误代码
 			}
 		}
 	}
