@@ -61,6 +61,11 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="iconButton" destination="Qta-8b-rQf" id="lab-3T-wiw"/>
+                <outlet property="subtitleLabel" destination="qdM-ZW-6wC" id="pyQ-28-cJC"/>
+                <outlet property="titleLabel" destination="2xB-VL-5D3" id="FE4-bu-nYo"/>
+            </connections>
         </view>
     </objects>
     <resources>

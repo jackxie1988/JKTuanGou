@@ -8,6 +8,17 @@
 
 #import "JKHomeTopItem.h"
 
+@interface JKHomeTopItem  ()
+///  标题
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+///  子标题
+@property (weak, nonatomic) IBOutlet UILabel *subtitleLabel;
+///  图标按钮
+@property (weak, nonatomic) IBOutlet UIButton *iconButton;
+
+
+@end
+
 @implementation JKHomeTopItem
 
 + (instancetype)item {
@@ -18,6 +29,23 @@
 // 将 xib 的自动拉伸去掉！！！  
 - (void)awakeFromNib {
     self.autoresizingMask = UIViewAutoresizingNone;
+}
+
+- (void)setTitle:(NSString *)title {
+    self.titleLabel.text = title;
+}
+
+- (void)setSubtitle:(NSString *)subtitle {
+    self.subtitleLabel.text = subtitle;
+}
+
+- (void)setIcon:(NSString *)icon highIcon:(NSString *)highIcon {
+    [self.iconButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+    [self.iconButton setImage:[UIImage imageNamed:highIcon] forState:UIControlStateHighlighted];
+}
+
+- (void)addTarget:(id)target action:(SEL)action {
+    [self.iconButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

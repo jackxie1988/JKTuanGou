@@ -21,6 +21,9 @@
 		BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93C71AAEAD5100DCE9E3 /* DPAPI.m */; };
 		BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */; };
 		BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */; };
+		BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */; };
+		BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */; };
+		BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */; };
 		BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF772801AAF24D8001F693C /* UIView+JKExtension.m */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,12 @@
 		BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JKSingleton.h; path = Other/Lib/JKSingleton.h; sourceTree = "<group>"; };
 		BC8D88EE1AAED7E60066F7DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Other/Lib/PrefixHeader.pch; sourceTree = "<group>"; };
+		BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSortViewController.h; sourceTree = "<group>"; };
+		BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSortViewController.m; sourceTree = "<group>"; };
+		BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCategoryViewController.h; sourceTree = "<group>"; };
+		BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCategoryViewController.m; sourceTree = "<group>"; };
+		BCCAA5171AAFC9B5007D12E3 /* JKDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDistrictViewController.h; sourceTree = "<group>"; };
+		BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDistrictViewController.m; sourceTree = "<group>"; };
 		BCF7727F1AAF24D8001F693C /* UIView+JKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKExtension.h"; sourceTree = "<group>"; };
 		BCF772801AAF24D8001F693C /* UIView+JKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +118,12 @@
 			children = (
 				BC2B3C241AAEF67700DFA275 /* JKHomeViewController.h */,
 				BC2B3C251AAEF67700DFA275 /* JKHomeViewController.m */,
+				BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */,
+				BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */,
+				BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */,
+				BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */,
+				BCCAA5171AAFC9B5007D12E3 /* JKDistrictViewController.h */,
+				BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,15 +367,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */,
 				BC2B3C261AAEF67700DFA275 /* JKHomeViewController.m in Sources */,
 				BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */,
 				BC2B3C301AAF016900DFA275 /* ViewController.m in Sources */,
 				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC2B3C361AAF2E8900DFA275 /* JKNavigationController.m in Sources */,
+				BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */,
 				BC2B3C3E1AAF3AA500DFA275 /* JKHomeTopItem.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
 				BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */,
 				BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */,
+				BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */,
 				BC6B93891AADF46E00DCE9E3 /* main.m in Sources */,
 				BC2B3C391AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m in Sources */,
 			);

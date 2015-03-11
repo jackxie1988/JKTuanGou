@@ -9,8 +9,16 @@
 #import "JKHomeViewController.h"
 #import "UIBarButtonItem+JKExtension.h"
 #import "JKHomeTopItem.h"
+#import "JKSortViewController.h"
+#import "JKDistrictViewController.h"
+#import "JKCategoryViewController.h"
 
 @interface JKHomeViewController ()
+
+@property (nonatomic,strong) UIBarButtonItem *sortItem;
+@property (nonatomic,strong) UIBarButtonItem *districtItem;
+@property (nonatomic,strong) UIBarButtonItem *categoryItem;
+
 
 @end
 
@@ -44,21 +52,32 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 分类
     JKHomeTopItem *catagory = [JKHomeTopItem item];
-    UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:catagory];
+    catagory.title = @"全部分类";
+    catagory.subtitle = nil;
+    [catagory setIcon:@"icon_category_-1" highIcon:@"icon_category_highlighted_-1"];
+    [catagory addTarget:self action:@selector(categoryClicked)];
+    self.categoryItem = [[UIBarButtonItem alloc] initWithCustomView:catagory];
     // 区域
     JKHomeTopItem *district = [JKHomeTopItem item];
-    UIBarButtonItem *districtItem = [[UIBarButtonItem alloc] initWithCustomView:district];
+    district.title = @"北京";
+    district.subtitle = @"北京";
+    [district setIcon:@"icon_district" highIcon:@"icon_district_highlighted"];
+    [district addTarget:self action:@selector(districtClicked)];
+    self.districtItem = [[UIBarButtonItem alloc] initWithCustomView:district];
     // 排序
     JKHomeTopItem *sort = [JKHomeTopItem item];
-    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sort];
+    sort.title = @"排序";
+    sort.subtitle = @"默认排序";
+    [sort setIcon:@"icon_sort" highIcon:@"icon_sort_highlighted"];
+    [sort addTarget:self action:@selector(sortClicked)];
+    self.sortItem = [[UIBarButtonItem alloc] initWithCustomView:sort];
     
     // 添加到 leftBarButtonItems 数组中
-    self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, districtItem, sortItem];
+    self.navigationItem.leftBarButtonItems = @[logoItem, self.categoryItem, self.districtItem, self.sortItem];
 }
 
 // 设置导航栏右边
-- (void)setUpNavRight {			
-    
+- (void)setUpNavRight {
     // 将按钮包装成自定义 UIBarButtonItem,因为导航栏中只能放 UIBarButtonItem
     UIBarButtonItem *searchItem = [UIBarButtonItem itemWithImage:@"icon_search" highImage:@"icon_search_highlighted" target:self action:@selector(searchBtnClicked)];
     searchItem.customView.width = 50;
@@ -76,8 +95,35 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)mapBtnClicked {
     JKLog(@"mapBtnClicked");
 }
+- (void)categoryClicked {
+//    JKLog(@"categoryClicked");
+    
+    JKCategoryViewController *categoryVC = [[JKCategoryViewController alloc] init];
+    categoryVC.modalPresentationStyle = UIModalPresentationPopover;
+    categoryVC.popoverPresentationController.barButtonItem = self.categoryItem;
+    
+    [self presentViewController:categoryVC animated:YES completion:nil];
+    
+}
+- (void)districtClicked {
+//    JKLog(@"districtClicked");
+    JKDistrictViewController *districtVC = [[JKDistrictViewController alloc] init];
+    districtVC.modalPresentationStyle = UIModalPresentationPopover;
+    districtVC.popoverPresentationController.barButtonItem = self.districtItem;
+    
+    [self presentViewController:districtVC animated:YES completion:nil];
+}
+- (void)sortClicked {
+//    JKLog(@"sortClicked");
+    
+    JKSortViewController *sortVC = [[JKSortViewController alloc] init];
+    sortVC.modalPresentationStyle = UIModalPresentationPopover;
+    sortVC.popoverPresentationController.barButtonItem = self.sortItem;
+    
+    [self presentViewController:sortVC animated:YES completion:nil];
+}
 
-
+/***************************************** 数据源方法 *****************************************/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
