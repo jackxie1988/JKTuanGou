@@ -21,6 +21,9 @@
 		BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93C71AAEAD5100DCE9E3 /* DPAPI.m */; };
 		BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */; };
 		BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */; };
+		BC9497BF1AB1E48E00C6CFD5 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497BD1AB1E48E00C6CFD5 /* categories.plist */; };
+		BC9497C01AB1E48E00C6CFD5 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */; };
+		BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497C41AB1E58600C6CFD5 /* JKSort.m */; };
 		BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */; };
 		BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */; };
 		BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */; };
@@ -67,6 +70,10 @@
 		BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JKSingleton.h; path = Other/Lib/JKSingleton.h; sourceTree = "<group>"; };
 		BC8D88EE1AAED7E60066F7DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Other/Lib/PrefixHeader.pch; sourceTree = "<group>"; };
+		BC9497BD1AB1E48E00C6CFD5 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
+		BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
+		BC9497C31AB1E58600C6CFD5 /* JKSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSort.h; sourceTree = "<group>"; };
+		BC9497C41AB1E58600C6CFD5 /* JKSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSort.m; sourceTree = "<group>"; };
 		BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSortViewController.h; sourceTree = "<group>"; };
 		BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSortViewController.m; sourceTree = "<group>"; };
 		BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCategoryViewController.h; sourceTree = "<group>"; };
@@ -106,8 +113,8 @@
 		BC2B3C201AAEF64D00DFA275 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BC9497C21AB1E57600C6CFD5 /* Model */,
 				BC2B3C211AAEF64D00DFA275 /* Controller */,
-				BC2B3C221AAEF64D00DFA275 /* Model */,
 				BC2B3C231AAEF64D00DFA275 /* View */,
 			);
 			path = Home;
@@ -126,13 +133,6 @@
 				BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BC2B3C221AAEF64D00DFA275 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BC2B3C231AAEF64D00DFA275 /* View */ = {
@@ -209,6 +209,7 @@
 		BC6B93861AADF46E00DCE9E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC9497BC1AB1E48200C6CFD5 /* plist */,
 				BC6B93901AADF46E00DCE9E3 /* Main.storyboard */,
 				BC6B93931AADF46E00DCE9E3 /* Images.xcassets */,
 				BC6B93871AADF46E00DCE9E3 /* Info.plist */,
@@ -264,6 +265,24 @@
 				BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */,
 			);
 			path = DP;
+			sourceTree = "<group>";
+		};
+		BC9497BC1AB1E48200C6CFD5 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				BC9497BD1AB1E48E00C6CFD5 /* categories.plist */,
+				BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		BC9497C21AB1E57600C6CFD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BC9497C31AB1E58600C6CFD5 /* JKSort.h */,
+				BC9497C41AB1E58600C6CFD5 /* JKSort.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,7 +366,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9497BF1AB1E48E00C6CFD5 /* categories.plist in Resources */,
 				BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */,
+				BC9497C01AB1E48E00C6CFD5 /* sorts.plist in Resources */,
 				BC6B93941AADF46E00DCE9E3 /* Images.xcassets in Resources */,
 				BC2B3C3B1AAF3A8C00DFA275 /* JKHomeTopItem.xib in Resources */,
 			);
@@ -370,6 +391,7 @@
 				BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */,
 				BC2B3C261AAEF67700DFA275 /* JKHomeViewController.m in Sources */,
 				BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */,
+				BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */,
 				BC2B3C301AAF016900DFA275 /* ViewController.m in Sources */,
 				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC2B3C361AAF2E8900DFA275 /* JKNavigationController.m in Sources */,
