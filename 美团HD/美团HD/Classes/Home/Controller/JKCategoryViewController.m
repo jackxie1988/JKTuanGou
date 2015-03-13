@@ -9,6 +9,8 @@
 #import "JKCategoryViewController.h"
 #import "JKDataTool.h"
 #import "JKCategory.h"
+#import "JKDropDownLeftCell.h"
+#import "JKDropDownRightCell.h"
 
 @interface JKCategoryViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *leftTableView;
@@ -43,26 +45,18 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;
     if (tableView == self.leftTableView) {
-        static NSString *leftID = @"left";
-        cell = [tableView dequeueReusableCellWithIdentifier:leftID];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:leftID];
-            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_dropdown_leftpart"]];
-            cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_dropdown_left_selected"]];
-        }
+        
+        cell = [JKDropDownLeftCell cellWithTableView:tableView];
+        
         JKCategory *category = [JKDataTool categories][indexPath.row];
         cell.textLabel.text = category.name;
         cell.accessoryType = category.subcategories.count ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
         cell.imageView.image = [UIImage imageNamed:category.small_icon];
         cell.imageView.highlightedImage = [UIImage imageNamed:category.small_highlighted_icon];
     } else { // 右边表格数据
-        static NSString *rightID = @"right";
-        cell = [tableView dequeueReusableCellWithIdentifier:rightID];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:rightID];
-            cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_dropdown_rightpart"]];
-            cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_dropdown_right_selected"]];
-        }
+        
+        cell = [JKDropDownRightCell cellWithTableView:tableView];
+        
         // 先获取左边选中的行，再设置右边的数据
         NSInteger leftSelectedRow = [self.leftTableView indexPathForSelectedRow].row;
         JKCategory *category = [JKDataTool categories][leftSelectedRow];

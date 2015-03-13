@@ -34,6 +34,8 @@
 		BC9497E41AB2915800C6CFD5 /* NSObject+MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497DC1AB2915800C6CFD5 /* NSObject+MJIvar.m */; };
 		BC9497E51AB2915800C6CFD5 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497DE1AB2915800C6CFD5 /* NSObject+MJKeyValue.m */; };
 		BC9497E71AB29AB600C6CFD5 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497E61AB29AB600C6CFD5 /* categories.plist */; };
+		BC9497EA1AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497E91AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m */; };
+		BC9497ED1AB2BF6800C6CFD5 /* JKDropDownRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497EC1AB2BF6800C6CFD5 /* JKDropDownRightCell.m */; };
 		BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */; };
 		BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */; };
 		BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */; };
@@ -104,6 +106,10 @@
 		BC9497DD1AB2915800C6CFD5 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
 		BC9497DE1AB2915800C6CFD5 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		BC9497E61AB29AB600C6CFD5 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
+		BC9497E81AB2BF4A00C6CFD5 /* JKDropDownLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDropDownLeftCell.h; sourceTree = "<group>"; };
+		BC9497E91AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDropDownLeftCell.m; sourceTree = "<group>"; };
+		BC9497EB1AB2BF6800C6CFD5 /* JKDropDownRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDropDownRightCell.h; sourceTree = "<group>"; };
+		BC9497EC1AB2BF6800C6CFD5 /* JKDropDownRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDropDownRightCell.m; sourceTree = "<group>"; };
 		BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSortViewController.h; sourceTree = "<group>"; };
 		BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSortViewController.m; sourceTree = "<group>"; };
 		BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCategoryViewController.h; sourceTree = "<group>"; };
@@ -173,6 +179,10 @@
 				BC2B3C3A1AAF3A8C00DFA275 /* JKHomeTopItem.xib */,
 				BC2B3C3C1AAF3AA500DFA275 /* JKHomeTopItem.h */,
 				BC2B3C3D1AAF3AA500DFA275 /* JKHomeTopItem.m */,
+				BC9497E81AB2BF4A00C6CFD5 /* JKDropDownLeftCell.h */,
+				BC9497E91AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m */,
+				BC9497EB1AB2BF6800C6CFD5 /* JKDropDownRightCell.h */,
+				BC9497EC1AB2BF6800C6CFD5 /* JKDropDownRightCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -471,6 +481,7 @@
 				BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */,
 				BC9497E41AB2915800C6CFD5 /* NSObject+MJIvar.m in Sources */,
 				BC2B3C3E1AAF3AA500DFA275 /* JKHomeTopItem.m in Sources */,
+				BC9497ED1AB2BF6800C6CFD5 /* JKDropDownRightCell.m in Sources */,
 				BC9497E51AB2915800C6CFD5 /* NSObject+MJKeyValue.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
 				BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */,
@@ -479,6 +490,7 @@
 				BC6B93891AADF46E00DCE9E3 /* main.m in Sources */,
 				BC9497DF1AB2915800C6CFD5 /* MJConst.m in Sources */,
 				BC2B3C391AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m in Sources */,
+				BC9497EA1AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
