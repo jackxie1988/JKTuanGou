@@ -8,41 +8,21 @@
 
 #import "JKSortViewController.h"
 #import "JKSort.h"
+#import "JKDataTool.h"
+
 
 @interface JKSortViewController ()
-
-// 定义一个数据属性，存储排序数据
-@property (nonatomic,strong) NSArray *sorts;
 
 @end
 
 @implementation JKSortViewController
 
-// 排序数据懒加载方法
-- (NSArray *)sorts {
-    if (_sorts == nil) {
-        
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"sorts.plist" ofType:nil];
-        NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
-        
-        NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:dictArray.count];
-        for (NSDictionary *dict in dictArray) {
-            JKSort *sort = [JKSort sortWithDict:dict];
-            [arrayM addObject:sort];
-        }
-        _sorts = [arrayM copy];
-    }
-    return _sorts;
-}
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.view.backgroundColor = JKRandomColor;
-//    JKLog(@"%@",self.sorts);
-    
-    NSUInteger count = self.sorts.count;
+    NSArray *sorts = [JKDataTool sorts];
+    NSUInteger count = sorts.count;
     CGFloat margin = 10;
     UIButton *lastButton = nil;
     for (int i=0; i<count; i++) {
@@ -50,7 +30,7 @@
         button.tag = i;
         [self.view addSubview:button];
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-        JKSort *sort = self.sorts[i];
+        JKSort *sort = sorts[i];
         [button setTitle:sort.label forState:UIControlStateNormal];
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
@@ -70,7 +50,6 @@
     CGFloat w = CGRectGetMaxX(lastButton.frame) + lastButton.x;
     CGFloat h = CGRectGetMaxY(lastButton.frame) + margin;
     self.preferredContentSize = CGSizeMake(w, h);
-    
 }
 
 - (void)buttonClick:(UIButton *)button {

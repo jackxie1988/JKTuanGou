@@ -24,6 +24,7 @@
 		BC9497BF1AB1E48E00C6CFD5 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497BD1AB1E48E00C6CFD5 /* categories.plist */; };
 		BC9497C01AB1E48E00C6CFD5 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */; };
 		BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497C41AB1E58600C6CFD5 /* JKSort.m */; };
+		BC9497C91AB274F800C6CFD5 /* JKDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497C81AB274F800C6CFD5 /* JKDataTool.m */; };
 		BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */; };
 		BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */; };
 		BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */; };
@@ -74,6 +75,8 @@
 		BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		BC9497C31AB1E58600C6CFD5 /* JKSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSort.h; sourceTree = "<group>"; };
 		BC9497C41AB1E58600C6CFD5 /* JKSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSort.m; sourceTree = "<group>"; };
+		BC9497C71AB274F800C6CFD5 /* JKDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDataTool.h; sourceTree = "<group>"; };
+		BC9497C81AB274F800C6CFD5 /* JKDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDataTool.m; sourceTree = "<group>"; };
 		BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSortViewController.h; sourceTree = "<group>"; };
 		BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSortViewController.m; sourceTree = "<group>"; };
 		BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCategoryViewController.h; sourceTree = "<group>"; };
@@ -113,6 +116,7 @@
 		BC2B3C201AAEF64D00DFA275 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				BC9497C61AB274DD00C6CFD5 /* Tool */,
 				BC9497C21AB1E57600C6CFD5 /* Model */,
 				BC2B3C211AAEF64D00DFA275 /* Controller */,
 				BC2B3C231AAEF64D00DFA275 /* View */,
@@ -285,6 +289,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BC9497C61AB274DD00C6CFD5 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				BC9497C71AB274F800C6CFD5 /* JKDataTool.h */,
+				BC9497C81AB274F800C6CFD5 /* JKDataTool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -392,6 +405,7 @@
 				BC2B3C261AAEF67700DFA275 /* JKHomeViewController.m in Sources */,
 				BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */,
 				BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */,
+				BC9497C91AB274F800C6CFD5 /* JKDataTool.m in Sources */,
 				BC2B3C301AAF016900DFA275 /* ViewController.m in Sources */,
 				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC2B3C361AAF2E8900DFA275 /* JKNavigationController.m in Sources */,
