@@ -13,6 +13,9 @@
 		BC2B3C391AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2B3C381AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m */; };
 		BC2B3C3B1AAF3A8C00DFA275 /* JKHomeTopItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC2B3C3A1AAF3A8C00DFA275 /* JKHomeTopItem.xib */; };
 		BC2B3C3E1AAF3AA500DFA275 /* JKHomeTopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BC2B3C3D1AAF3AA500DFA275 /* JKHomeTopItem.m */; };
+		BC5A46521AB31CB6006200F0 /* JKDistrictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5A46511AB31CB6006200F0 /* JKDistrictViewController.xib */; };
+		BC5A46561AB32489006200F0 /* JKCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5A46541AB32489006200F0 /* JKCityViewController.m */; };
+		BC5A46571AB32489006200F0 /* JKCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC5A46551AB32489006200F0 /* JKCityViewController.xib */; };
 		BC6B93891AADF46E00DCE9E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93881AADF46E00DCE9E3 /* main.m */; };
 		BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B938B1AADF46E00DCE9E3 /* AppDelegate.m */; };
 		BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6B93901AADF46E00DCE9E3 /* Main.storyboard */; };
@@ -65,6 +68,10 @@
 		BC2B3C3A1AAF3A8C00DFA275 /* JKHomeTopItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKHomeTopItem.xib; sourceTree = "<group>"; };
 		BC2B3C3C1AAF3AA500DFA275 /* JKHomeTopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKHomeTopItem.h; sourceTree = "<group>"; };
 		BC2B3C3D1AAF3AA500DFA275 /* JKHomeTopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKHomeTopItem.m; sourceTree = "<group>"; };
+		BC5A46511AB31CB6006200F0 /* JKDistrictViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKDistrictViewController.xib; sourceTree = "<group>"; };
+		BC5A46531AB32489006200F0 /* JKCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCityViewController.h; sourceTree = "<group>"; };
+		BC5A46541AB32489006200F0 /* JKCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCityViewController.m; sourceTree = "<group>"; };
+		BC5A46551AB32489006200F0 /* JKCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKCityViewController.xib; sourceTree = "<group>"; };
 		BC6B93831AADF46E00DCE9E3 /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6B93871AADF46E00DCE9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC6B93881AADF46E00DCE9E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -172,6 +179,10 @@
 				BC9497CA1AB2791100C6CFD5 /* JKCategoryViewController.xib */,
 				BCCAA5171AAFC9B5007D12E3 /* JKDistrictViewController.h */,
 				BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */,
+				BC5A46511AB31CB6006200F0 /* JKDistrictViewController.xib */,
+				BC5A46531AB32489006200F0 /* JKCityViewController.h */,
+				BC5A46541AB32489006200F0 /* JKCityViewController.m */,
+				BC5A46551AB32489006200F0 /* JKCityViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -451,7 +462,9 @@
 				BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */,
 				BC9497E71AB29AB600C6CFD5 /* categories.plist in Resources */,
 				BC9497C01AB1E48E00C6CFD5 /* sorts.plist in Resources */,
+				BC5A46521AB31CB6006200F0 /* JKDistrictViewController.xib in Resources */,
 				BC6B93941AADF46E00DCE9E3 /* Images.xcassets in Resources */,
+				BC5A46571AB32489006200F0 /* JKCityViewController.xib in Resources */,
 				BC2B3C3B1AAF3A8C00DFA275 /* JKHomeTopItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +493,7 @@
 				BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */,
 				BC9497CE1AB2848500C6CFD5 /* JKCategory.m in Sources */,
 				BC9497C91AB274F800C6CFD5 /* JKDataTool.m in Sources */,
+				BC5A46561AB32489006200F0 /* JKCityViewController.m in Sources */,
 				BC2B3C301AAF016900DFA275 /* ViewController.m in Sources */,
 				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC2B3C361AAF2E8900DFA275 /* JKNavigationController.m in Sources */,
