@@ -21,10 +21,19 @@
 		BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93C71AAEAD5100DCE9E3 /* DPAPI.m */; };
 		BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93CD1AAEAF6F00DCE9E3 /* DPConstants.m */; };
 		BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */; };
-		BC9497BF1AB1E48E00C6CFD5 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497BD1AB1E48E00C6CFD5 /* categories.plist */; };
 		BC9497C01AB1E48E00C6CFD5 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */; };
 		BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497C41AB1E58600C6CFD5 /* JKSort.m */; };
 		BC9497C91AB274F800C6CFD5 /* JKDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497C81AB274F800C6CFD5 /* JKDataTool.m */; };
+		BC9497CB1AB2791100C6CFD5 /* JKCategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC9497CA1AB2791100C6CFD5 /* JKCategoryViewController.xib */; };
+		BC9497CE1AB2848500C6CFD5 /* JKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497CD1AB2848500C6CFD5 /* JKCategory.m */; };
+		BC9497DF1AB2915800C6CFD5 /* MJConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497D11AB2915800C6CFD5 /* MJConst.m */; };
+		BC9497E01AB2915800C6CFD5 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497D41AB2915800C6CFD5 /* MJFoundation.m */; };
+		BC9497E11AB2915800C6CFD5 /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497D61AB2915800C6CFD5 /* MJIvar.m */; };
+		BC9497E21AB2915800C6CFD5 /* MJType.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497D81AB2915800C6CFD5 /* MJType.m */; };
+		BC9497E31AB2915800C6CFD5 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497DA1AB2915800C6CFD5 /* NSObject+MJCoding.m */; };
+		BC9497E41AB2915800C6CFD5 /* NSObject+MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497DC1AB2915800C6CFD5 /* NSObject+MJIvar.m */; };
+		BC9497E51AB2915800C6CFD5 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497DE1AB2915800C6CFD5 /* NSObject+MJKeyValue.m */; };
+		BC9497E71AB29AB600C6CFD5 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497E61AB29AB600C6CFD5 /* categories.plist */; };
 		BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */; };
 		BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */; };
 		BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */; };
@@ -71,12 +80,30 @@
 		BC8D88EB1AAEC37C0066F7DC /* DPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPRequest.m; sourceTree = "<group>"; };
 		BC8D88ED1AAED25C0066F7DC /* JKSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JKSingleton.h; path = Other/Lib/JKSingleton.h; sourceTree = "<group>"; };
 		BC8D88EE1AAED7E60066F7DC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = Other/Lib/PrefixHeader.pch; sourceTree = "<group>"; };
-		BC9497BD1AB1E48E00C6CFD5 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
 		BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		BC9497C31AB1E58600C6CFD5 /* JKSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSort.h; sourceTree = "<group>"; };
 		BC9497C41AB1E58600C6CFD5 /* JKSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSort.m; sourceTree = "<group>"; };
 		BC9497C71AB274F800C6CFD5 /* JKDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDataTool.h; sourceTree = "<group>"; };
 		BC9497C81AB274F800C6CFD5 /* JKDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDataTool.m; sourceTree = "<group>"; };
+		BC9497CA1AB2791100C6CFD5 /* JKCategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKCategoryViewController.xib; sourceTree = "<group>"; };
+		BC9497CC1AB2848500C6CFD5 /* JKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCategory.h; sourceTree = "<group>"; };
+		BC9497CD1AB2848500C6CFD5 /* JKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCategory.m; sourceTree = "<group>"; };
+		BC9497D01AB2915800C6CFD5 /* MJConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJConst.h; sourceTree = "<group>"; };
+		BC9497D11AB2915800C6CFD5 /* MJConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJConst.m; sourceTree = "<group>"; };
+		BC9497D21AB2915800C6CFD5 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
+		BC9497D31AB2915800C6CFD5 /* MJFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJFoundation.h; sourceTree = "<group>"; };
+		BC9497D41AB2915800C6CFD5 /* MJFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJFoundation.m; sourceTree = "<group>"; };
+		BC9497D51AB2915800C6CFD5 /* MJIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJIvar.h; sourceTree = "<group>"; };
+		BC9497D61AB2915800C6CFD5 /* MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJIvar.m; sourceTree = "<group>"; };
+		BC9497D71AB2915800C6CFD5 /* MJType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJType.h; sourceTree = "<group>"; };
+		BC9497D81AB2915800C6CFD5 /* MJType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJType.m; sourceTree = "<group>"; };
+		BC9497D91AB2915800C6CFD5 /* NSObject+MJCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJCoding.h"; sourceTree = "<group>"; };
+		BC9497DA1AB2915800C6CFD5 /* NSObject+MJCoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJCoding.m"; sourceTree = "<group>"; };
+		BC9497DB1AB2915800C6CFD5 /* NSObject+MJIvar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJIvar.h"; sourceTree = "<group>"; };
+		BC9497DC1AB2915800C6CFD5 /* NSObject+MJIvar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJIvar.m"; sourceTree = "<group>"; };
+		BC9497DD1AB2915800C6CFD5 /* NSObject+MJKeyValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJKeyValue.h"; sourceTree = "<group>"; };
+		BC9497DE1AB2915800C6CFD5 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
+		BC9497E61AB29AB600C6CFD5 /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = categories.plist; sourceTree = "<group>"; };
 		BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSortViewController.h; sourceTree = "<group>"; };
 		BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSortViewController.m; sourceTree = "<group>"; };
 		BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCategoryViewController.h; sourceTree = "<group>"; };
@@ -133,6 +160,7 @@
 				BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */,
 				BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */,
 				BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */,
+				BC9497CA1AB2791100C6CFD5 /* JKCategoryViewController.xib */,
 				BCCAA5171AAFC9B5007D12E3 /* JKDistrictViewController.h */,
 				BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */,
 			);
@@ -250,6 +278,7 @@
 		BC6B93B21AADF5C900DCE9E3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				BC9497CF1AB2915800C6CFD5 /* MJExtension */,
 				BC2B3C321AAF2E8900DFA275 /* Controller */,
 				BC2B3C351AAF2E8900DFA275 /* Tool */,
 				BC2B3C2A1AAF013E00DFA275 /* Category */,
@@ -274,7 +303,7 @@
 		BC9497BC1AB1E48200C6CFD5 /* plist */ = {
 			isa = PBXGroup;
 			children = (
-				BC9497BD1AB1E48E00C6CFD5 /* categories.plist */,
+				BC9497E61AB29AB600C6CFD5 /* categories.plist */,
 				BC9497BE1AB1E48E00C6CFD5 /* sorts.plist */,
 			);
 			path = plist;
@@ -285,6 +314,8 @@
 			children = (
 				BC9497C31AB1E58600C6CFD5 /* JKSort.h */,
 				BC9497C41AB1E58600C6CFD5 /* JKSort.m */,
+				BC9497CC1AB2848500C6CFD5 /* JKCategory.h */,
+				BC9497CD1AB2848500C6CFD5 /* JKCategory.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +327,28 @@
 				BC9497C81AB274F800C6CFD5 /* JKDataTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		BC9497CF1AB2915800C6CFD5 /* MJExtension */ = {
+			isa = PBXGroup;
+			children = (
+				BC9497D01AB2915800C6CFD5 /* MJConst.h */,
+				BC9497D11AB2915800C6CFD5 /* MJConst.m */,
+				BC9497D21AB2915800C6CFD5 /* MJExtension.h */,
+				BC9497D31AB2915800C6CFD5 /* MJFoundation.h */,
+				BC9497D41AB2915800C6CFD5 /* MJFoundation.m */,
+				BC9497D51AB2915800C6CFD5 /* MJIvar.h */,
+				BC9497D61AB2915800C6CFD5 /* MJIvar.m */,
+				BC9497D71AB2915800C6CFD5 /* MJType.h */,
+				BC9497D81AB2915800C6CFD5 /* MJType.m */,
+				BC9497D91AB2915800C6CFD5 /* NSObject+MJCoding.h */,
+				BC9497DA1AB2915800C6CFD5 /* NSObject+MJCoding.m */,
+				BC9497DB1AB2915800C6CFD5 /* NSObject+MJIvar.h */,
+				BC9497DC1AB2915800C6CFD5 /* NSObject+MJIvar.m */,
+				BC9497DD1AB2915800C6CFD5 /* NSObject+MJKeyValue.h */,
+				BC9497DE1AB2915800C6CFD5 /* NSObject+MJKeyValue.m */,
+			);
+			path = MJExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,8 +432,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC9497BF1AB1E48E00C6CFD5 /* categories.plist in Resources */,
+				BC9497CB1AB2791100C6CFD5 /* JKCategoryViewController.xib in Resources */,
 				BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */,
+				BC9497E71AB29AB600C6CFD5 /* categories.plist in Resources */,
 				BC9497C01AB1E48E00C6CFD5 /* sorts.plist in Resources */,
 				BC6B93941AADF46E00DCE9E3 /* Images.xcassets in Resources */,
 				BC2B3C3B1AAF3A8C00DFA275 /* JKHomeTopItem.xib in Resources */,
@@ -401,21 +455,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC9497E11AB2915800C6CFD5 /* MJIvar.m in Sources */,
+				BC9497E01AB2915800C6CFD5 /* MJFoundation.m in Sources */,
 				BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */,
 				BC2B3C261AAEF67700DFA275 /* JKHomeViewController.m in Sources */,
+				BC9497E21AB2915800C6CFD5 /* MJType.m in Sources */,
 				BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */,
+				BC9497E31AB2915800C6CFD5 /* NSObject+MJCoding.m in Sources */,
 				BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */,
+				BC9497CE1AB2848500C6CFD5 /* JKCategory.m in Sources */,
 				BC9497C91AB274F800C6CFD5 /* JKDataTool.m in Sources */,
 				BC2B3C301AAF016900DFA275 /* ViewController.m in Sources */,
 				BC8D88EC1AAEC37C0066F7DC /* DPRequest.m in Sources */,
 				BC2B3C361AAF2E8900DFA275 /* JKNavigationController.m in Sources */,
 				BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */,
+				BC9497E41AB2915800C6CFD5 /* NSObject+MJIvar.m in Sources */,
 				BC2B3C3E1AAF3AA500DFA275 /* JKHomeTopItem.m in Sources */,
+				BC9497E51AB2915800C6CFD5 /* NSObject+MJKeyValue.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
 				BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */,
 				BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */,
 				BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */,
 				BC6B93891AADF46E00DCE9E3 /* main.m in Sources */,
+				BC9497DF1AB2915800C6CFD5 /* MJConst.m in Sources */,
 				BC2B3C391AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

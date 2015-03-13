@@ -8,6 +8,8 @@
 
 #import "JKDataTool.h"
 #import "JKSort.h"
+#import "JKCategory.h"
+//#import "MJExtension.h"
 
 @implementation JKDataTool
 
@@ -26,6 +28,27 @@ static NSArray *_sorts;
         _sorts = [arrayM copy];
     }
     return _sorts;
+}
+
+
+// 使用 MJExtension 进行字典转模型
+static NSArray *_categories;
++ (NSArray *)categories {
+//    if (_categories == nil) {
+//        _categories = [JKCategory objectArrayWithFilename:@"categories.plist"];
+//    }
+    
+    if (_categories == nil) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"categories.plist" ofType:nil];
+        NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
+        NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:dictArray.count];
+        for ( NSDictionary *dict in dictArray) {
+            JKCategory *category = [JKCategory categoryWithDict:dict];
+            [arrayM addObject:category];
+        }
+        _categories = [arrayM copy];
+    }
+    return _categories;
 }
 
 @end

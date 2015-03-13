@@ -13,4 +13,7 @@
 ///  返回所有的排数数据 (数组)
 + (NSArray *)sorts;
 
+///  返回所有的分类数据 (数组)
++ (NSArray *)categories;
+
 @end
