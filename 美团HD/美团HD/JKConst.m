@@ -13,3 +13,9 @@
 NSString *const JKSortDidChangeNotification = @"JKSortDidChangeNotification";
 ///  通过这个 key 可以去除当前的排序模型
 NSString *const JKCurrentSortKey = @"JKCurrentSortKey";
+///  类别改变的通知
+NSString *const JKCategoryDidChangeNotification = @"JKCategoryDidChangeNotification";
+///  通过这个key可以取出当前的类别模型
+NSString *const JKCurrentCategoryKey = @"JKCurrentCategoryKey";
+///  通过这个可以可以取出当前子类别的索引
+NSString *const JKCurrentSubCategoryIndexKey = @"JKCurrentSubCategoryIndexKey";

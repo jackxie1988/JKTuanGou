@@ -71,10 +71,33 @@
          // 选中左边行的时候刷新右边的数据
         if (tableView == self.leftTableView) {
             [self.rightTabelView reloadData];
+            
+            // 如果用户点击左边，而左边选项没有子类别，就发送通知
+            JKCategory *category = [JKDataTool categories][indexPath.row];
+            if (category.subcategories.count == 0) {
+                [self postNote:category subcategoryIndex:nil];
+            }
         }
     } else {
-        JKLog(@"选中了右边第%zd行",indexPath.row);
+        // 点击右边 发送通知
+        NSInteger leftSelectedRow = [self.leftTableView indexPathForSelectedRow].row;
+        JKCategory *category = [JKDataTool categories][leftSelectedRow];
+        [self postNote:category subcategoryIndex:@(indexPath.row)];
     }
+}
+
+#pragma mark - 私有方法
+- (void)postNote:(JKCategory *)category subcategoryIndex:(id)subcategoryIndex {
+    // 1. 销毁当前控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 2. 发送通知
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+    userInfo[JKCurrentCategoryKey] = category;
+    if (subcategoryIndex) {
+        userInfo[JKCurrentSubCategoryIndexKey] = subcategoryIndex;
+    }
+    [JKNoteCenter postNotificationName:JKCategoryDidChangeNotification object:nil userInfo:userInfo];
 }
 
 @end

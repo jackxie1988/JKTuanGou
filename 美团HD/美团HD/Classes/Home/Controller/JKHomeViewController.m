@@ -13,6 +13,7 @@
 #import "JKDistrictViewController.h"
 #import "JKCategoryViewController.h"
 #import "JKSort.h"
+#import "JKCategory.h"
 
 @interface JKHomeViewController ()
 
@@ -43,19 +44,37 @@ static NSString * const reuseIdentifier = @"Cell";
     [self setUpNotes];
 }
 
-#pragma mark - 通知处理
+#pragma mark - 添加通知
 - (void)setUpNotes {
     [JKNoteCenter addObserver:self selector:@selector(sortDidChange:) name:JKSortDidChangeNotification object:nil];
+    [JKNoteCenter addObserver:self selector:@selector(categoryDidChange:) name:JKCategoryDidChangeNotification object:nil];
 }
 - (void)dealloc {
     [JKNoteCenter removeObserver:self];
 }
+#pragma mark - 通知处理
 - (void)sortDidChange:(NSNotification *)note {
     JKHomeTopItem *topItem = (JKHomeTopItem *)self.sortItem.customView;
     JKSort *sort = note.userInfo[JKCurrentSortKey];
     topItem.subtitle = sort.label;
     
 #warning TODO 重新发送请求给服务器...
+}
+- (void)categoryDidChange:(NSNotification *)note {
+    // 取得导航栏上面的自定义视图
+    JKHomeTopItem *topItem = (JKHomeTopItem *)self.categoryItem.customView;
+    // 同时通知传进来的 key 取出模型
+    JKCategory *category = note.userInfo[JKCurrentCategoryKey];
+    // 取出模型中子类型里所对应的下标
+    int subcategoryIndex = [note.userInfo[JKCurrentSubCategoryIndexKey] intValue];
+    NSString *subcategory = category.subcategories[subcategoryIndex];
+    
+    // 设置导航栏属性内容
+    topItem.title = category.name;
+    topItem.subtitle = subcategory;
+    [topItem setIcon:category.icon highIcon:category.highlighted_icon];
+    
+#warning TODO... 重新发送请求给服务器
 }
 
 #pragma mark - 设置导航栏
