@@ -25,8 +25,8 @@
 // 通知中心
 #define JKNoteCenter [NSNotificationCenter defaultCenter]
 
-
-
 #import "UIView+JKExtension.h"
+
+#import "JKConst.h"
 
 #endif

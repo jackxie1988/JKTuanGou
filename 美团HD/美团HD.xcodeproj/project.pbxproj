@@ -36,6 +36,7 @@
 		BC9497E71AB29AB600C6CFD5 /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC9497E61AB29AB600C6CFD5 /* categories.plist */; };
 		BC9497EA1AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497E91AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m */; };
 		BC9497ED1AB2BF6800C6CFD5 /* JKDropDownRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497EC1AB2BF6800C6CFD5 /* JKDropDownRightCell.m */; };
+		BC9497F01AB2C62200C6CFD5 /* JKConst.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9497EF1AB2C62100C6CFD5 /* JKConst.m */; };
 		BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */; };
 		BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */; };
 		BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5181AAFC9B5007D12E3 /* JKDistrictViewController.m */; };
@@ -110,6 +111,8 @@
 		BC9497E91AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDropDownLeftCell.m; sourceTree = "<group>"; };
 		BC9497EB1AB2BF6800C6CFD5 /* JKDropDownRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDropDownRightCell.h; sourceTree = "<group>"; };
 		BC9497EC1AB2BF6800C6CFD5 /* JKDropDownRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDropDownRightCell.m; sourceTree = "<group>"; };
+		BC9497EE1AB2C62100C6CFD5 /* JKConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKConst.h; sourceTree = "<group>"; };
+		BC9497EF1AB2C62100C6CFD5 /* JKConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKConst.m; sourceTree = "<group>"; };
 		BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSortViewController.h; sourceTree = "<group>"; };
 		BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSortViewController.m; sourceTree = "<group>"; };
 		BCCAA5141AAFC9A8007D12E3 /* JKCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCategoryViewController.h; sourceTree = "<group>"; };
@@ -241,6 +244,8 @@
 				BC8D88EE1AAED7E60066F7DC /* PrefixHeader.pch */,
 				BC6B938A1AADF46E00DCE9E3 /* AppDelegate.h */,
 				BC6B938B1AADF46E00DCE9E3 /* AppDelegate.m */,
+				BC9497EE1AB2C62100C6CFD5 /* JKConst.h */,
+				BC9497EF1AB2C62100C6CFD5 /* JKConst.m */,
 				BC2B3C2E1AAF016900DFA275 /* ViewController.h */,
 				BC2B3C2F1AAF016900DFA275 /* ViewController.m */,
 				BC6B93861AADF46E00DCE9E3 /* Supporting Files */,
@@ -485,6 +490,7 @@
 				BC9497E51AB2915800C6CFD5 /* NSObject+MJKeyValue.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
 				BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */,
+				BC9497F01AB2C62200C6CFD5 /* JKConst.m in Sources */,
 				BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */,
 				BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */,
 				BC6B93891AADF46E00DCE9E3 /* main.m in Sources */,

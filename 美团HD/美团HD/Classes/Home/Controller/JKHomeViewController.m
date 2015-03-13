@@ -12,6 +12,7 @@
 #import "JKSortViewController.h"
 #import "JKDistrictViewController.h"
 #import "JKCategoryViewController.h"
+#import "JKSort.h"
 
 @interface JKHomeViewController ()
 
@@ -39,9 +40,25 @@ static NSString * const reuseIdentifier = @"Cell";
     // 设置导航栏右边
     [self setUpNavRight];
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self setUpNotes];
 }
 
+#pragma mark - 通知处理
+- (void)setUpNotes {
+    [JKNoteCenter addObserver:self selector:@selector(sortDidChange:) name:JKSortDidChangeNotification object:nil];
+}
+- (void)dealloc {
+    [JKNoteCenter removeObserver:self];
+}
+- (void)sortDidChange:(NSNotification *)note {
+    JKHomeTopItem *topItem = (JKHomeTopItem *)self.sortItem.customView;
+    JKSort *sort = note.userInfo[JKCurrentSortKey];
+    topItem.subtitle = sort.label;
+    
+#warning TODO 重新发送请求给服务器...
+}
+
+#pragma mark - 设置导航栏
 // 设置导航栏左边
 - (void)setUpNavLeft {
     

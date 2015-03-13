@@ -29,6 +29,7 @@
         UIButton *button = [[UIButton alloc] init];
         button.tag = i;
         [self.view addSubview:button];
+        // 按钮点击事件监听
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         JKSort *sort = sorts[i];
         [button setTitle:sort.label forState:UIControlStateNormal];
@@ -53,7 +54,13 @@
 }
 
 - (void)buttonClick:(UIButton *)button {
-    JKLog(@"buttonClick");
+//    JKLog(@"buttonClick");
+    /// 1. 让 popover 消失
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    ///  2. 发出通知 [JKDataTool sorts][button.tag] 先取得 排序数组，根据 tag 取得对应的按钮
+    NSDictionary *userInfo = @{JKCurrentSortKey : [JKDataTool sorts][button.tag]};
+    [JKNoteCenter postNotificationName:JKSortDidChangeNotification object:nil userInfo:userInfo];
 }
 
 
