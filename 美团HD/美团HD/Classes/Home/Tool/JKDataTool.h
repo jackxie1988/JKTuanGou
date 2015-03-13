@@ -16,4 +16,7 @@
 ///  返回所有的分类数据 (数组)
 + (NSArray *)categories;
 
+///  返回所有的城市组数据
++ (NSArray *)cityGroups;
+
 @end
