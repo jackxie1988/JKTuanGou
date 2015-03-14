@@ -19,6 +19,7 @@
 		BC5A465A1AB33358006200F0 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC5A46581AB33358006200F0 /* cities.plist */; };
 		BC5A465B1AB33358006200F0 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC5A46591AB33358006200F0 /* cityGroups.plist */; };
 		BC5A465E1AB3337B006200F0 /* JKCityGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5A465D1AB3337B006200F0 /* JKCityGroup.m */; };
+		BC5A46621AB48639006200F0 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BC5A46611AB48639006200F0 /* UIView+AutoLayout.m */; };
 		BC6B93891AADF46E00DCE9E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B93881AADF46E00DCE9E3 /* main.m */; };
 		BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6B938B1AADF46E00DCE9E3 /* AppDelegate.m */; };
 		BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC6B93901AADF46E00DCE9E3 /* Main.storyboard */; };
@@ -79,6 +80,8 @@
 		BC5A46591AB33358006200F0 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		BC5A465C1AB3337B006200F0 /* JKCityGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCityGroup.h; sourceTree = "<group>"; };
 		BC5A465D1AB3337B006200F0 /* JKCityGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCityGroup.m; sourceTree = "<group>"; };
+		BC5A46601AB48639006200F0 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		BC5A46611AB48639006200F0 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		BC6B93831AADF46E00DCE9E3 /* 美团HD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "美团HD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6B93871AADF46E00DCE9E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC6B93881AADF46E00DCE9E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -235,6 +238,15 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		BC5A465F1AB48639006200F0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BC5A46601AB48639006200F0 /* UIView+AutoLayout.h */,
+				BC5A46611AB48639006200F0 /* UIView+AutoLayout.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		BC6B937A1AADF46E00DCE9E3 = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +323,7 @@
 		BC6B93B21AADF5C900DCE9E3 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				BC5A465F1AB48639006200F0 /* Source */,
 				BC9497CF1AB2915800C6CFD5 /* MJExtension */,
 				BC2B3C321AAF2E8900DFA275 /* Controller */,
 				BC2B3C351AAF2E8900DFA275 /* Tool */,
@@ -521,6 +534,7 @@
 				BC9497F01AB2C62200C6CFD5 /* JKConst.m in Sources */,
 				BC6B938C1AADF46E00DCE9E3 /* AppDelegate.m in Sources */,
 				BCCAA5191AAFC9B5007D12E3 /* JKDistrictViewController.m in Sources */,
+				BC5A46621AB48639006200F0 /* UIView+AutoLayout.m in Sources */,
 				BC6B93891AADF46E00DCE9E3 /* main.m in Sources */,
 				BC9497DF1AB2915800C6CFD5 /* MJConst.m in Sources */,
 				BC2B3C391AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m in Sources */,

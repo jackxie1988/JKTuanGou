@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JKCityViewController">
             <connections>
+                <outlet property="searchBar" destination="j9v-Wx-rzm" id="L0S-fe-YVr"/>
                 <outlet property="tableView" destination="oyE-1d-EKj" id="Q5J-Sn-3nP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,6 +22,9 @@
                         <constraint firstAttribute="height" constant="44" id="dHg-fY-rhm"/>
                     </constraints>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="f8T-V6-Wcr"/>
+                    </connections>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-1d-EKj">
                     <rect key="frame" x="0.0" y="69" width="600" height="531"/>
