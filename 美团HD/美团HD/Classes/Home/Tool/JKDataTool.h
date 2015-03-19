@@ -19,4 +19,18 @@
 ///  返回所有的城市组数据
 + (NSArray *)cityGroups;
 
+///  返回所有城市的名字
++ (NSArray *)cityNames;
+
+///  返回所有的城市
++ (NSArray *)cities;
+
 @end
+
+
+
+
+
+
+
+

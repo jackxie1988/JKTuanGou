@@ -10,6 +10,7 @@
 #import "JKSort.h"
 #import "JKCategory.h"
 #import "JKCityGroup.h"
+#import "JKCity.h"
 
 @implementation JKDataTool
 
@@ -66,4 +67,71 @@ static NSArray *_cityGroups;
     return _cityGroups;
 }
 
+static NSArray *_cityNames;
++ (NSArray *)cityNames {
+    if (_cityNames == nil) {
+        NSMutableArray *cityNames = [NSMutableArray array]; 
+        NSArray *groups = [self cityGroups];
+        [groups enumerateObjectsUsingBlock:^(JKCityGroup *group, NSUInteger idx, BOOL *stop) {
+            if (idx == 0) return ;
+            [cityNames addObjectsFromArray:group.cities];
+        }];
+        _cityNames = cityNames;
+//        JKLog(@"%@",_cityNames);
+    }
+    return _cityNames;
+}
+
+static NSArray *_cities;
++ (NSArray *)cities {
+    if (_cities == nil) {
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"cities.plist" ofType:nil];
+        NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
+        NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:dictArray.count];
+        for (NSDictionary *dict in dictArray) {
+            JKCity *city = [JKCity cityWithDict:dict];
+            [arrayM addObject:city];
+        }
+        _cities = [arrayM copy];
+    }
+    return _cities;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -11,38 +11,34 @@
 #import "JKDataTool.h"
 #import "JKCityGroup.h"
 #import "UIView+AutoLayout.h"
+#import "JKCityResultViewController.h"
 
 @interface JKCityViewController ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 ///  按钮遮盖
-@property (nonatomic, weak) UIButton *cover;
+@property (nonatomic, weak) IBOutlet UIButton *cover;
+///  城市搜索结果控制器的属性
+@property (nonatomic,weak) JKCityResultViewController *cityResultVC;
 
 @end
 
 @implementation JKCityViewController
 
-///  实现遮盖按钮的懒加载方法
-- (UIButton *)cover {
-    if (_cover == nil) {
-        UIButton *cover = [[UIButton alloc] init];
-        cover.backgroundColor = [UIColor lightGrayColor];
+- (JKCityResultViewController *)cityResultVC {
+    if (_cityResultVC == nil) {
+        JKCityResultViewController *cityResultVC = [[JKCityResultViewController alloc] init];
+        [self addChildViewController:cityResultVC];
+        [self.view addSubview:cityResultVC.view];
         
-        // 为遮盖按钮绑定一个监听事件
-        [cover addTarget:self.searchBar action:@selector(resignFirstResponder) forControlEvents:UIControlEventTouchUpInside];
-        
-        cover.alpha = 0.5;
-        [self.view addSubview:cover];
-        
-        // 使用第三方框架为遮盖添加约束
-        [cover autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
-        [cover autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.tableView];
-        
-        _cover = cover;
+        [cityResultVC.view autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
+        [cityResultVC.view autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.tableView];
+        self.cityResultVC = cityResultVC;
     }
-    return _cover;
+    return _cityResultVC;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,6 +50,9 @@
     
     // 设置表格的索引文字颜色
     self.tableView.sectionIndexColor = [UIColor blackColor];
+    
+    // 添加监听遮盖按钮点击
+    [self.cover addTarget:self.searchBar action:@selector(resignFirstResponder) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)close {
@@ -111,16 +110,55 @@
     searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield"];
     // 2.隐藏 cancel 按钮
     [searchBar setShowsCancelButton:NO animated:YES];
-    // 3.导航条向下以动画形式出现
+    // 3.导航条向下以动画形式出现 
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     // 4.移除蒙版
     self.cover.hidden = YES;
+    
+    // 5.清除搜索框文字
+    searchBar.text = nil;
+    // 6.隐藏搜索结果控制器
+    self.cityResultVC.view.hidden = YES;
     
 }
 // 点击取消按钮
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
     [searchBar endEditing:YES];
 }
-
-
+// 搜索框的文字改变
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+//    if (searchText.length != 0) {
+//        self.cityResultVC.view.hidden = NO;
+//    } else {
+//        self.cityResultVC.view.hidden = YES;
+//    }
+    self.cityResultVC.view.hidden = (searchText.length == 0);
+    self.cityResultVC.searchText = searchText;
+}
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
