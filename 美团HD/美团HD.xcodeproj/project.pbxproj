@@ -51,6 +51,11 @@
 		BCEBE0CF1ABA7A6900CEF0D8 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEBE0CE1ABA7A6900CEF0D8 /* NSArray+Log.m */; };
 		BCEBE0D21ABA8B0500CEF0D8 /* JKCity.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEBE0D11ABA8B0500CEF0D8 /* JKCity.m */; };
 		BCEBE0D51ABAA6B400CEF0D8 /* JKDistrict.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEBE0D41ABAA6B300CEF0D8 /* JKDistrict.m */; };
+		BCEBE0D91ABAFBB800CEF0D8 /* JKDealCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEBE0D71ABAFBB800CEF0D8 /* JKDealCell.m */; };
+		BCEBE0DA1ABAFBB800CEF0D8 /* JKDealCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEBE0D81ABAFBB800CEF0D8 /* JKDealCell.xib */; };
+		BCEBE0DD1ABB013900CEF0D8 /* JKCenterLineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEBE0DC1ABB013900CEF0D8 /* JKCenterLineLabel.m */; };
+		BCEBE0E01ABB045B00CEF0D8 /* JKFindDealsResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEBE0DF1ABB045B00CEF0D8 /* JKFindDealsResult.m */; };
+		BCEBE0E31ABB046700CEF0D8 /* JKDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEBE0E21ABB046700CEF0D8 /* JKDeal.m */; };
 		BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCF772801AAF24D8001F693C /* UIView+JKExtension.m */; };
 /* End PBXBuildFile section */
 
@@ -148,6 +153,15 @@
 		BCEBE0D11ABA8B0500CEF0D8 /* JKCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCity.m; sourceTree = "<group>"; };
 		BCEBE0D31ABAA6B300CEF0D8 /* JKDistrict.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDistrict.h; sourceTree = "<group>"; };
 		BCEBE0D41ABAA6B300CEF0D8 /* JKDistrict.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDistrict.m; sourceTree = "<group>"; };
+		BCEBE0D61ABAFBB800CEF0D8 /* JKDealCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDealCell.h; sourceTree = "<group>"; };
+		BCEBE0D71ABAFBB800CEF0D8 /* JKDealCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDealCell.m; sourceTree = "<group>"; };
+		BCEBE0D81ABAFBB800CEF0D8 /* JKDealCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKDealCell.xib; sourceTree = "<group>"; };
+		BCEBE0DB1ABB013900CEF0D8 /* JKCenterLineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCenterLineLabel.h; sourceTree = "<group>"; };
+		BCEBE0DC1ABB013900CEF0D8 /* JKCenterLineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCenterLineLabel.m; sourceTree = "<group>"; };
+		BCEBE0DE1ABB045B00CEF0D8 /* JKFindDealsResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKFindDealsResult.h; sourceTree = "<group>"; };
+		BCEBE0DF1ABB045B00CEF0D8 /* JKFindDealsResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKFindDealsResult.m; sourceTree = "<group>"; };
+		BCEBE0E11ABB046700CEF0D8 /* JKDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDeal.h; sourceTree = "<group>"; };
+		BCEBE0E21ABB046700CEF0D8 /* JKDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDeal.m; sourceTree = "<group>"; };
 		BCF7727F1AAF24D8001F693C /* UIView+JKExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKExtension.h"; sourceTree = "<group>"; };
 		BCF772801AAF24D8001F693C /* UIView+JKExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +235,11 @@
 				BC9497E91AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m */,
 				BC9497EB1AB2BF6800C6CFD5 /* JKDropDownRightCell.h */,
 				BC9497EC1AB2BF6800C6CFD5 /* JKDropDownRightCell.m */,
+				BCEBE0D61ABAFBB800CEF0D8 /* JKDealCell.h */,
+				BCEBE0D71ABAFBB800CEF0D8 /* JKDealCell.m */,
+				BCEBE0D81ABAFBB800CEF0D8 /* JKDealCell.xib */,
+				BCEBE0DB1ABB013900CEF0D8 /* JKCenterLineLabel.h */,
+				BCEBE0DC1ABB013900CEF0D8 /* JKCenterLineLabel.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -385,6 +404,10 @@
 				BCEBE0D11ABA8B0500CEF0D8 /* JKCity.m */,
 				BCEBE0D31ABAA6B300CEF0D8 /* JKDistrict.h */,
 				BCEBE0D41ABAA6B300CEF0D8 /* JKDistrict.m */,
+				BCEBE0DE1ABB045B00CEF0D8 /* JKFindDealsResult.h */,
+				BCEBE0DF1ABB045B00CEF0D8 /* JKFindDealsResult.m */,
+				BCEBE0E11ABB046700CEF0D8 /* JKDeal.h */,
+				BCEBE0E21ABB046700CEF0D8 /* JKDeal.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -513,6 +536,7 @@
 				BC5A465A1AB33358006200F0 /* cities.plist in Resources */,
 				BC9497CB1AB2791100C6CFD5 /* JKCategoryViewController.xib in Resources */,
 				BC6B93921AADF46E00DCE9E3 /* Main.storyboard in Resources */,
+				BCEBE0DA1ABAFBB800CEF0D8 /* JKDealCell.xib in Resources */,
 				BC9497E71AB29AB600C6CFD5 /* categories.plist in Resources */,
 				BC9497C01AB1E48E00C6CFD5 /* sorts.plist in Resources */,
 				BC5A465B1AB33358006200F0 /* cityGroups.plist in Resources */,
@@ -537,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEBE0D91ABAFBB800CEF0D8 /* JKDealCell.m in Sources */,
 				BC9497E11AB2915800C6CFD5 /* MJIvar.m in Sources */,
 				BC9497E01AB2915800C6CFD5 /* MJFoundation.m in Sources */,
 				BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */,
@@ -544,6 +569,7 @@
 				BC9497E21AB2915800C6CFD5 /* MJType.m in Sources */,
 				BC6B93CE1AAEAF6F00DCE9E3 /* DPConstants.m in Sources */,
 				BC9497E31AB2915800C6CFD5 /* NSObject+MJCoding.m in Sources */,
+				BCEBE0E31ABB046700CEF0D8 /* JKDeal.m in Sources */,
 				BC9497C51AB1E58600C6CFD5 /* JKSort.m in Sources */,
 				BCEBE0D51ABAA6B400CEF0D8 /* JKDistrict.m in Sources */,
 				BC9497CE1AB2848500C6CFD5 /* JKCategory.m in Sources */,
@@ -560,6 +586,7 @@
 				BC5A465E1AB3337B006200F0 /* JKCityGroup.m in Sources */,
 				BCB987E31ABA653600BFCBE5 /* JKCityResultViewController.m in Sources */,
 				BCEBE0CF1ABA7A6900CEF0D8 /* NSArray+Log.m in Sources */,
+				BCEBE0DD1ABB013900CEF0D8 /* JKCenterLineLabel.m in Sources */,
 				BC6B93CB1AAEAD5100DCE9E3 /* DPAPI.m in Sources */,
 				BCF772811AAF24D8001F693C /* UIView+JKExtension.m in Sources */,
 				BC9497F01AB2C62200C6CFD5 /* JKConst.m in Sources */,
@@ -570,6 +597,7 @@
 				BC6B93891AADF46E00DCE9E3 /* main.m in Sources */,
 				BC9497DF1AB2915800C6CFD5 /* MJConst.m in Sources */,
 				BC2B3C391AAF2ED900DFA275 /* UIBarButtonItem+JKExtension.m in Sources */,
+				BCEBE0E01ABB045B00CEF0D8 /* JKFindDealsResult.m in Sources */,
 				BC9497EA1AB2BF4A00C6CFD5 /* JKDropDownLeftCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,10 @@
 #import "JKCity.h"
 #import "JKDistrict.h"
 #import "DPAPI.h"
+#import "MJExtension.h"
+#import "JKFindDealsResult.h"
+#import "JKDeal.h"
+#import "JKDealCell.h"
 
 @interface JKHomeViewController ()
 ///  导航栏上面的 item
@@ -34,17 +38,32 @@
 ///  当前的区域名称 - 发送给服务器
 @property (nonatomic,copy) NSString *currentRegionName;
 
+
+// 显示所有的团购
+@property (nonatomic,strong) NSMutableArray *deals;
+
 @end
 
 @implementation JKHomeViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+- (NSMutableArray *)deals {
+    if (_deals == nil) {
+        _deals = [NSMutableArray array];
+    }
+    return _deals;
+}
+
+static NSString * const reuseIdentifier = @"Deal";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.view.backgroundColor = JKColor(230, 230, 230);
+    [self.collectionView registerNib:[UINib nibWithNibName:@"JKDealCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    
     self.collectionView.backgroundColor = JKColor(230, 230, 230);
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    layout.itemSize = CGSizeMake(305, 305); // cell 的尺寸大小与xib保持一致
     
     
     // 设置导航栏左边
@@ -223,7 +242,6 @@ static NSString * const reuseIdentifier = @"Cell";
     if (self.currentCity == nil) return;
     
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"limit"] = @2;
     // 城市
     params[@"city"] = self.currentCity.name;
     // 区域
@@ -236,11 +254,22 @@ static NSString * const reuseIdentifier = @"Cell";
     
     JKLog(@"params - %@",params);
     [[DPAPI sharedInstance] request:@"v1/deal/find_deals" params:params success:^(id json) {
-        JKLog(@"success - %@",json[@"total_count"]);
+        // 使用MJ框架解析json数据
+        JKFindDealsResult *result = [JKFindDealsResult objectWithKeyValues:json];
+        
+        // 移除旧数据
+        [self.deals removeAllObjects];
+        
+        // 添加新数据
+        [self.deals addObjectsFromArray:result.deals];
+        
+        // 刷新表格
+        [self.collectionView reloadData];
+        
+        
     } failure:^(NSError *error) {
         JKLog(@"failure - %@",error);
     }];
-    
 }
 
 /***************************************** 数据源方法 *****************************************/
@@ -261,22 +290,15 @@ static NSString * const reuseIdentifier = @"Cell";
 */
 
 #pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
-}
-
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+    return self.deals.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    JKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    
     
     return cell;
 }
