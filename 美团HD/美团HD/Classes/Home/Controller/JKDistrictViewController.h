@@ -10,4 +10,7 @@
 
 @interface JKDistrictViewController : UIViewController
 
+///  添加一个区域属性，让首页控制器能够将区域数据传送过来
+@property (nonatomic,strong) NSArray *districts;
+
 @end

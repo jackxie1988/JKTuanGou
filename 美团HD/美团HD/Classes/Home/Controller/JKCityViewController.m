@@ -90,6 +90,22 @@
     return [[JKDataTool cityGroups] valueForKeyPath:@"title"];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 1.销毁当前控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 2.取出城市的名字
+    JKCityGroup *cityGroup = [JKDataTool cityGroups][indexPath.section];
+    NSString *cityName = cityGroup.cities[indexPath.row];
+    
+    // 3.根据城市名字 获得 城市模型
+    JKCity *city = [JKDataTool cityWithName:cityName];
+    
+    // 4.发送通知
+    NSDictionary *userInfo = @{JKCurrentCityKey : city};
+    [JKNoteCenter postNotificationName:JKCityDidChangeNotification object:nil userInfo:userInfo];
+}
+
 #pragma mark - 搜索框代理
 ///  当搜索框已经进入编辑状态 (键盘已经弹出)
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {

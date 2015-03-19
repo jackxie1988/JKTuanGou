@@ -19,3 +19,44 @@ NSString *const JKCategoryDidChangeNotification = @"JKCategoryDidChangeNotificat
 NSString *const JKCurrentCategoryKey = @"JKCurrentCategoryKey";
 ///  通过这个可以可以取出当前子类别的索引
 NSString *const JKCurrentSubCategoryIndexKey = @"JKCurrentSubCategoryIndexKey";
+///  城市改变的通知
+NSString *const JKCityDidChangeNotification = @"JKCityDidChangeNotification";
+///  通过这个key可以取出当前的城市模型
+NSString *const JKCurrentCityKey = @"JKCurrentCityKey";
+
+///  区域改变的通知
+NSString *const JKDistrictDidChangeNotification = @"JKDistrictDidChangeNotification";
+///  通过这个key可以取出当前的区域模型
+NSString *const JKCurrentDistrictKey = @"JKCurrentDistrictKey";
+///  通过这个key可以取出当前子区域的索引
+NSString *const JKCurrentSubdistrictIndexKey = @"JKCurrentSubdistrictIndexKey";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

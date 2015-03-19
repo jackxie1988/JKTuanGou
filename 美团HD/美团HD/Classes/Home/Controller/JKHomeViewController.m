@@ -14,13 +14,25 @@
 #import "JKCategoryViewController.h"
 #import "JKSort.h"
 #import "JKCategory.h"
+#import "JKCity.h"
+#import "JKDistrict.h"
+#import "DPAPI.h"
 
 @interface JKHomeViewController ()
-
+///  导航栏上面的 item
 @property (nonatomic,strong) UIBarButtonItem *sortItem;
 @property (nonatomic,strong) UIBarButtonItem *districtItem;
 @property (nonatomic,strong) UIBarButtonItem *categoryItem;
 
+///  记录一些当前数据
+///  当前城市
+@property (nonatomic,strong) JKCity *currentCity;
+///  当前的排序
+@property (nonatomic,strong) JKSort *currentSort;
+///  当前的类别名称 - 发送给服务器
+@property (nonatomic,copy) NSString *currentCategoryName;
+///  当前的区域名称 - 发送给服务器
+@property (nonatomic,copy) NSString *currentRegionName;
 
 @end
 
@@ -48,6 +60,8 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)setUpNotes {
     [JKNoteCenter addObserver:self selector:@selector(sortDidChange:) name:JKSortDidChangeNotification object:nil];
     [JKNoteCenter addObserver:self selector:@selector(categoryDidChange:) name:JKCategoryDidChangeNotification object:nil];
+    [JKNoteCenter addObserver:self selector:@selector(cityDidChange:) name:JKCityDidChangeNotification object:nil];
+    [JKNoteCenter addObserver:self selector:@selector(districtDidChange:) name:JKDistrictDidChangeNotification object:nil];
 }
 - (void)dealloc {
     [JKNoteCenter removeObserver:self];
@@ -55,10 +69,13 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark - 通知处理
 - (void)sortDidChange:(NSNotification *)note {
     JKHomeTopItem *topItem = (JKHomeTopItem *)self.sortItem.customView;
-    JKSort *sort = note.userInfo[JKCurrentSortKey];
-    topItem.subtitle = sort.label;
     
-#warning TODO 重新发送请求给服务器...
+    self.currentSort = note.userInfo[JKCurrentSortKey];
+    topItem.subtitle = self.currentSort.label;
+    
+//    JKSort *sort = note.userInfo[JKCurrentSortKey];
+//    topItem.subtitle = sort.label;
+    [self loadNewDeals]; // 发送请求给服务器
 }
 - (void)categoryDidChange:(NSNotification *)note {
     // 取得导航栏上面的自定义视图
@@ -74,7 +91,46 @@ static NSString * const reuseIdentifier = @"Cell";
     topItem.subtitle = subcategory;
     [topItem setIcon:category.icon highIcon:category.highlighted_icon];
     
-#warning TODO... 重新发送请求给服务器
+    // 记录发送给服务器的类别名称
+    self.currentCategoryName = subcategory ? subcategory : category.name;
+    if ([self.currentCategoryName isEqualToString:@"全部"]) {
+        self.currentCategoryName = category.name;
+    } else if ([self.currentCategoryName isEqualToString:@"全部分类"]) {
+        self.currentCategoryName = nil; // 如果用户点击了左边的全部分类，就不分这个参数，意味着加载全部
+    }
+    
+    [self loadNewDeals]; // 发送请求给服务器
+}
+- (void)cityDidChange:(NSNotification *)note {
+    // 更新导航栏顶部
+    JKHomeTopItem *topItem = (JKHomeTopItem *)self.districtItem.customView;
+    
+    // 取出模型
+    self.currentCity = note.userInfo[JKCurrentCityKey];
+    
+    topItem.title = [NSString stringWithFormat:@"%@ - 全部",self.currentCity.name];
+    topItem.subtitle = nil;
+    
+    [self loadNewDeals]; // 发送请求给服务器
+}
+- (void)districtDidChange:(NSNotification *)note {
+    // 1.更新导航栏顶部
+    JKHomeTopItem *topItem = (JKHomeTopItem *)self.districtItem.customView;
+    // 2.取出模型
+    JKDistrict *district = note.userInfo[JKCurrentDistrictKey];
+    int subdistrictIndex = [note.userInfo[JKCurrentSubCategoryIndexKey] intValue];
+    NSString *subdistrictName = district.subdistricts[subdistrictIndex];
+    // 3.设置数据
+    topItem.title = [NSString stringWithFormat:@"%@ - %@",self.currentCity.name,district.name];
+    topItem.subtitle = subdistrictName;
+    
+    // 记录发送给服务器的区域名称
+    self.currentRegionName = subdistrictName ? subdistrictName : district.name;
+    if ([self.currentRegionName isEqualToString:@"全部"]) {
+        self.currentRegionName = subdistrictName ? district.name : nil;
+    }
+    
+    [self loadNewDeals];
 }
 
 #pragma mark - 设置导航栏
@@ -147,6 +203,8 @@ static NSString * const reuseIdentifier = @"Cell";
     districtVC.modalPresentationStyle = UIModalPresentationPopover;
     districtVC.popoverPresentationController.barButtonItem = self.districtItem;
     
+    districtVC.districts = self.currentCity.districts;
+    
     [self presentViewController:districtVC animated:YES completion:nil];
 }
 - (void)sortClicked {
@@ -157,6 +215,32 @@ static NSString * const reuseIdentifier = @"Cell";
     sortVC.popoverPresentationController.barButtonItem = self.sortItem;
     
     [self presentViewController:sortVC animated:YES completion:nil];
+}
+
+#pragma mark - 发送请求给服务器 - 加载新的团购
+- (void)loadNewDeals {
+    // 如果没有选择城市，直接返回
+    if (self.currentCity == nil) return;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"limit"] = @2;
+    // 城市
+    params[@"city"] = self.currentCity.name;
+    // 区域
+    if (self.currentRegionName) params[@"region"] = self.currentRegionName;
+    // 类别
+    if (self.currentCategoryName) params[@"category"] = self.currentCategoryName;
+    // 排序
+    if (self.currentSort) params[@"sort"] = @(self.currentSort.value);
+    
+    
+    JKLog(@"params - %@",params);
+    [[DPAPI sharedInstance] request:@"v1/deal/find_deals" params:params success:^(id json) {
+        JKLog(@"success - %@",json[@"total_count"]);
+    } failure:^(NSError *error) {
+        JKLog(@"failure - %@",error);
+    }];
+    
 }
 
 /***************************************** 数据源方法 *****************************************/

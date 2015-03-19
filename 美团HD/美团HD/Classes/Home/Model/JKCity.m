@@ -7,6 +7,9 @@
 //
 
 #import "JKCity.h"
+#import "MJExtension.h"
+#import "JKDistrict.h"
+
 
 @implementation JKCity
 
@@ -14,6 +17,10 @@
     id obj = [[self alloc] init];
     [obj setValuesForKeysWithDictionary:dict];
     return obj;
+}
+
++ (NSDictionary *)objectClassInArray {
+    return @{@"districts" : [JKDistrict class]};
 }
 
 @end

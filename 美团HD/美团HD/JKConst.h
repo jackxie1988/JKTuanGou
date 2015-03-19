@@ -17,3 +17,49 @@ UIKIT_EXTERN NSString *const JKCategoryDidChangeNotification;
 UIKIT_EXTERN NSString *const JKCurrentCategoryKey;
 ///  通过这个可以可以取出当前子类别的索引
 UIKIT_EXTERN NSString *const JKCurrentSubCategoryIndexKey;
+///  城市改变的通知
+UIKIT_EXTERN NSString *const JKCityDidChangeNotification;
+///  通过这个key可以取出当前的城市模型
+UIKIT_EXTERN NSString *const JKCurrentCityKey;
+
+///  区域改变的通知
+UIKIT_EXTERN NSString *const JKDistrictDidChangeNotification;
+///  通过这个key可以取出当前的区域模型
+UIKIT_EXTERN NSString *const JKCurrentDistrictKey;
+///  通过这个key可以取出当前子区域的索引
+UIKIT_EXTERN NSString *const JKCurrentSubdistrictIndexKey;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

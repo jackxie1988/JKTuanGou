@@ -11,6 +11,7 @@
 #import "JKCategory.h"
 #import "JKCityGroup.h"
 #import "JKCity.h"
+#import "MJExtension.h"
 
 @implementation JKDataTool
 
@@ -82,19 +83,33 @@ static NSArray *_cityNames;
     return _cityNames;
 }
 
+//static NSArray *_cities;
+//+ (NSArray *)cities {
+//    if (_cities == nil) {
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"cities.plist" ofType:nil];
+//        NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
+//        NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:dictArray.count];
+//        for (NSDictionary *dict in dictArray) {
+//            JKCity *city = [JKCity cityWithDict:dict];
+//            [arrayM addObject:city];
+//        }
+//        _cities = [arrayM copy];
+//    }
+//    return _cities;
+//}
 static NSArray *_cities;
-+ (NSArray *)cities {
-    if (_cities == nil) {
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"cities.plist" ofType:nil];
-        NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
-        NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:dictArray.count];
-        for (NSDictionary *dict in dictArray) {
-            JKCity *city = [JKCity cityWithDict:dict];
-            [arrayM addObject:city];
-        }
-        _cities = [arrayM copy];
++ (NSArray *)cities
+{
+    if (!_cities) {
+        _cities = [JKCity objectArrayWithFilename:@"cities.plist"];
     }
     return _cities;
+}
+
++ (JKCity *)cityWithName:(NSString *)name {
+    if (name.length == 0) return nil;
+    
+    return [[[self cities] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"name == %@",name]] firstObject];
 }
 
 @end

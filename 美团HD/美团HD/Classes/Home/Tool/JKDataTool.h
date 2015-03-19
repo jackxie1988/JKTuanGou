@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JKCity.h"
 
 @interface JKDataTool : NSObject
 
@@ -24,6 +25,9 @@
 
 ///  返回所有的城市
 + (NSArray *)cities;
+
+///  根据城市名字获得城市模型
++ (JKCity *)cityWithName:(NSString *)name;
 
 @end
 

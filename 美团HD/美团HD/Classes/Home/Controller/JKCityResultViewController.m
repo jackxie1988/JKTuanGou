@@ -66,6 +66,18 @@
     return [NSString stringWithFormat:@"共有%zd个搜索结果",self.resultCities.count];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 1.销毁当前控制器
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // 2.取出城市模型
+    JKCity *city = self.resultCities[indexPath.row];
+    
+    // 3.发送通知
+    NSDictionary *userInfo = @{JKCurrentCityKey : city};
+    [JKNoteCenter postNotificationName:JKCityDidChangeNotification object:nil userInfo:userInfo];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
