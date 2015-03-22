@@ -29,6 +29,10 @@ UIKIT_EXTERN NSString *const JKCurrentDistrictKey;
 ///  通过这个key可以取出当前子区域的索引
 UIKIT_EXTERN NSString *const JKCurrentSubdistrictIndexKey;
 
+///  屏幕尺寸的常量值
+UIKIT_EXTERN CGFloat const JKScreenMaxWH;
+UIKIT_EXTERN CGFloat const JKScreenMinWH;
+
 
 
 

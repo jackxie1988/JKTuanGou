@@ -32,7 +32,9 @@ NSString *const JKCurrentDistrictKey = @"JKCurrentDistrictKey";
 NSString *const JKCurrentSubdistrictIndexKey = @"JKCurrentSubdistrictIndexKey";
 
 
-
+///  屏幕尺寸的常量值
+CGFloat const JKScreenMaxWH = 1024;
+CGFloat const JKScreenMinWH = 768;
 
 
 

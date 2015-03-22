@@ -55,6 +55,18 @@
 
 static NSString * const reuseIdentifier = @"Deal";
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    JKLog(@"%@",NSStringFromCGRect(self.view.frame));
+    // 输出结果   {{0, 0}, {768, 1024}}
+    
+    // 在视图即将显现的时候调用 监听屏幕旋转方法
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    [self viewWillTransitionToSize:screenSize withTransitionCoordinator:nil];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -272,22 +284,22 @@ static NSString * const reuseIdentifier = @"Deal";
     }];
 }
 
-/***************************************** 数据源方法 *****************************************/
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 监听屏幕旋转
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    CGFloat screenW = size.width;
+    // 如果是横屏 --> 3列  如果是竖屏 --> 2列
+    int cols = (screenW == JKScreenMaxWH) ? 3 : 2;
+    CGFloat allCellW = cols * layout.itemSize.width;
+    // 如果是横屏，间距就一样，如果是竖屏，y 值不同
+    CGFloat xMargin = (screenW - allCellW) / (cols + 1);
+    CGFloat yMargin = (cols == 3) ? xMargin : 30;
+    
+    layout.sectionInset = UIEdgeInsetsMake(yMargin, xMargin, yMargin, xMargin);
+    layout.minimumInteritemSpacing = xMargin;
+    layout.minimumLineSpacing = yMargin;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -304,34 +316,5 @@ static NSString * const reuseIdentifier = @"Deal";
 }
 
 #pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end
