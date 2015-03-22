@@ -107,6 +107,7 @@
             </constraints>
             <connections>
                 <outlet property="currentPriceLabel" destination="jRI-df-15g" id="Vtl-YD-e7Q"/>
+                <outlet property="dealNewMark" destination="KO7-Gf-F2x" id="Udx-Lk-3je"/>
                 <outlet property="descLabel" destination="drO-9D-dNB" id="TUs-A4-voj"/>
                 <outlet property="imageView" destination="gqK-Xz-GO8" id="Vxk-Io-eDm"/>
                 <outlet property="listPriceLabel" destination="iks-LH-IEx" id="eRR-Ei-AG4"/>

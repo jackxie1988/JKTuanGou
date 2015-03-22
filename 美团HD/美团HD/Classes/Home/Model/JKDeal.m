@@ -24,4 +24,38 @@
     _current_price = current_price.dealedPriceString;
 }
 
+//- (void)setPublish_date:(NSDate *)publish_date {
+//    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+//    fmt.dateFormat = @"yyyy-MM-dd";
+//    // 将字符串类型转换成 NSDate 类型
+//    _publish_date = [fmt dateFromString:(NSString *)publish_date];
+//}
+//
+//- (void)setPurchase_deadline:(NSDate *)purchase_deadline {
+//    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+//    fmt.dateFormat = @"yyyy-MM-dd";
+//    // 将字符串类型转换成 NSDate 类型
+//    _purchase_deadline = [fmt dateFromString:(NSString *)purchase_deadline];
+//}
+
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

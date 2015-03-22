@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *purchaseCountLabel;
 
+// 新单属性
+@property (weak, nonatomic) IBOutlet UIImageView *dealNewMark;
+
 
 
 @end
@@ -40,6 +43,15 @@
     self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@",deal.current_price];
     // 购买数
     self.purchaseCountLabel.text = [NSString stringWithFormat:@"已售%d",deal.purchase_count];
+    
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    fmt.dateFormat = @"yyyy-MM-dd";
+    // 将 NSDate 日期转化成字符串
+    NSString *now = [fmt stringFromDate:[NSDate date]];
+    NSComparisonResult result = [now compare:deal.publish_date];
+    self.dealNewMark.hidden = (result == NSOrderedDescending) ? YES : NO;
+    
+    JKLog(@"%@",deal.publish_date);
 }
 
 - (void)layoutSubviews {

@@ -27,9 +27,9 @@
 // 小尺寸团购图片链接，最大图片尺寸160×100
 @property (nonatomic,copy) NSString *s_image_url;
 // 团购发布上线日期
-@property (nonatomic,strong) NSDate *publish_date;
+@property (nonatomic,copy) NSString *publish_date;
 // 团购单的截止购买日期
-@property (nonatomic,strong) NSDate *purchase_deadline;
+@property (nonatomic,copy) NSString *purchase_deadline;
 
 
 @end
