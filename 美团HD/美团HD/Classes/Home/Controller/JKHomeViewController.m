@@ -310,6 +310,7 @@ static NSString * const reuseIdentifier = @"Deal";
     JKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
+    cell.deal = self.deals[indexPath.item];
     
     
     return cell;

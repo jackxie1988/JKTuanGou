@@ -27,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="21" id="jkB-PP-FXi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【金桥】鼎盛食品" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drO-9D-dNB">
@@ -48,12 +48,6 @@
                                 <color key="textColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥108" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZl-2I-ngW" customClass="JKCenterLineLabel">
-                                <rect key="frame" x="46" y="81" width="31" height="14"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已售 1000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZ3-9I-SGo">
                                 <rect key="frame" x="185" y="80" width="100" height="15"/>
                                 <constraints>
@@ -64,20 +58,29 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥108" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iks-LH-IEx" customClass="JKCenterLineLabel">
+                                <rect key="frame" x="46" y="74" width="36" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zrK-Xx-yTY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OZl-2I-ngW" firstAttribute="leading" secondItem="jRI-df-15g" secondAttribute="trailing" constant="5" id="0ll-Pd-dqA"/>
                             <constraint firstAttribute="trailing" secondItem="dZ3-9I-SGo" secondAttribute="trailing" id="6Hy-SO-Bpk"/>
                             <constraint firstAttribute="bottom" secondItem="dZ3-9I-SGo" secondAttribute="bottom" id="AyG-cQ-RbY"/>
                             <constraint firstItem="drO-9D-dNB" firstAttribute="leading" secondItem="Eh5-jI-fmb" secondAttribute="leading" id="FWn-BU-wPg"/>
                             <constraint firstItem="K4W-b2-waQ" firstAttribute="leading" secondItem="Eh5-jI-fmb" secondAttribute="leading" id="No7-c0-0QZ"/>
+                            <constraint firstItem="iks-LH-IEx" firstAttribute="leading" secondItem="jRI-df-15g" secondAttribute="trailing" constant="5" id="VFb-DU-LpB"/>
                             <constraint firstItem="jRI-df-15g" firstAttribute="leading" secondItem="Eh5-jI-fmb" secondAttribute="leading" id="VTP-x2-rWL"/>
                             <constraint firstAttribute="trailing" secondItem="K4W-b2-waQ" secondAttribute="trailing" id="dN9-VZ-i4Q"/>
                             <constraint firstAttribute="trailing" secondItem="drO-9D-dNB" secondAttribute="trailing" id="eCg-qx-fP2"/>
                             <constraint firstAttribute="bottom" secondItem="jRI-df-15g" secondAttribute="bottom" id="ede-Qt-s5C"/>
+                            <constraint firstAttribute="bottom" secondItem="iks-LH-IEx" secondAttribute="bottom" id="mZD-GF-S6r"/>
                             <constraint firstItem="drO-9D-dNB" firstAttribute="top" secondItem="K4W-b2-waQ" secondAttribute="bottom" constant="5" id="oaG-nH-gJm"/>
-                            <constraint firstAttribute="bottom" secondItem="OZl-2I-ngW" secondAttribute="bottom" id="pKJ-Hy-BQ5"/>
                             <constraint firstItem="K4W-b2-waQ" firstAttribute="top" secondItem="Eh5-jI-fmb" secondAttribute="top" id="wgr-Pg-0gw"/>
                         </constraints>
                     </view>
@@ -102,6 +105,14 @@
                 <constraint firstAttribute="bottom" secondItem="Eh5-jI-fmb" secondAttribute="bottom" constant="10" id="nut-tP-d1B"/>
                 <constraint firstItem="Eh5-jI-fmb" firstAttribute="top" secondItem="gqK-Xz-GO8" secondAttribute="bottom" constant="10" id="w3B-iH-YED"/>
             </constraints>
+            <connections>
+                <outlet property="currentPriceLabel" destination="jRI-df-15g" id="Vtl-YD-e7Q"/>
+                <outlet property="descLabel" destination="drO-9D-dNB" id="TUs-A4-voj"/>
+                <outlet property="imageView" destination="gqK-Xz-GO8" id="Vxk-Io-eDm"/>
+                <outlet property="listPriceLabel" destination="iks-LH-IEx" id="eRR-Ei-AG4"/>
+                <outlet property="purchaseCountLabel" destination="dZ3-9I-SGo" id="NIf-jQ-M2R"/>
+                <outlet property="titleLabel" destination="K4W-b2-waQ" id="3BJ-ph-IJr"/>
+            </connections>
             <point key="canvasLocation" x="222.5" y="242.5"/>
         </collectionViewCell>
     </objects>

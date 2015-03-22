@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class JKDeal;
+
 
 @interface JKDealCell : UICollectionViewCell
+// 团购模型属性
+@property (nonatomic,strong) JKDeal *deal;
 
 @end

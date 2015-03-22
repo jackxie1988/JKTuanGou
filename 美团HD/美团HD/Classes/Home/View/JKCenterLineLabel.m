@@ -10,12 +10,31 @@
 
 @implementation JKCenterLineLabel
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
-    // Drawing code
+    
+    // 一定要先调用一下父类的 drawRect 方法
+    [super drawRect:rect];
+    
+    CGFloat x = 0 + rect.origin.x;
+    CGFloat y = rect.size.height * 0.5 + rect.origin.y;
+    CGFloat w = rect.size.width;
+    CGFloat h = 1;
+    UIRectFill(CGRectMake(x, y, w, h));
+    
+    // 方法二
+//    CGContextRef ctx = UIGraphicsGetCurrentContext();
+//    
+//    // 起点
+//    CGFloat startX = 0;
+//    CGFloat startY = rect.size.height * 0.5 + rect.origin.y;
+//    CGContextMoveToPoint(ctx, startX, startY);
+//    
+//    // 终点
+//    CGFloat endX = rect.size.width;
+//    CGFloat endY = startY;
+//    CGContextAddLineToPoint(ctx, endX, endY);
+//    
+//    CGContextStrokePath(ctx);
 }
-*/
 
 @end

@@ -8,11 +8,20 @@
 
 #import "JKDeal.h"
 #import "MJExtension.h"
+#import "NSString+JKExtension.h"
 
 @implementation JKDeal
 
 + (NSDictionary *)replacedKeyFromPropertyName {
     return @{@"desc" : @"description"};
+}
+
+- (void)setList_price:(NSString *)list_price {
+    _list_price = list_price.dealedPriceString;
+}
+
+- (void)setCurrent_price:(NSString *)current_price {
+    _current_price = current_price.dealedPriceString;
 }
 
 @end

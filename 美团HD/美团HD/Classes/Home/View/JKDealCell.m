@@ -7,12 +7,40 @@
 //
 
 #import "JKDealCell.h"
+#import "UIImageView+WebCache.h"
+#import "JKDeal.h"
+#import "JKCenterLineLabel.h"
+
+@interface JKDealCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *purchaseCountLabel;
+
+
+
+@end
 
 @implementation JKDealCell
 
-//- (void)awakeFromNib {
-//    self.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_dealcell"]];
-//}
+- (void)setDeal:(JKDeal *)deal {
+    _deal = deal;
+    
+    // 图片
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:deal.s_image_url] placeholderImage:[UIImage imageNamed:@"placeholder_deal"]];
+    // 标题
+    self.titleLabel.text = deal.title;
+    // 描述
+    self.descLabel.text = deal.desc;
+    // 原价
+    self.listPriceLabel.text = [NSString stringWithFormat:@"￥%@",deal.list_price];
+    // 现价
+    self.currentPriceLabel.text = [NSString stringWithFormat:@"￥%@",deal.current_price];
+    // 购买数
+    self.purchaseCountLabel.text = [NSString stringWithFormat:@"已售%d",deal.purchase_count];
+}
 
 - (void)layoutSubviews {
     [super layoutSubviews];
