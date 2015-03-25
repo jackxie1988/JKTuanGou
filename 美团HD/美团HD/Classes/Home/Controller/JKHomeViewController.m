@@ -94,7 +94,7 @@ static NSString * const reuseIdentifier = @"Deal";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    JKLog(@"%@",NSStringFromCGRect(self.view.frame));
+//    JKLog(@"%@",NSStringFromCGRect(self.view.frame));
     // 输出结果   {{0, 0}, {768, 1024}}
     
     // 在视图即将显现的时候调用 监听屏幕旋转方法
@@ -339,7 +339,7 @@ static NSString * const reuseIdentifier = @"Deal";
         self.currentPage = 1;
         
     } failure:^(NSError *error) {
-//        JKLog(@"failure - %@",error);
+        JKLog(@"failure - %@",error);
         [MBProgressHUD showError:@"网络繁忙，请稍后再试"];
         
         // 结束头部刷新

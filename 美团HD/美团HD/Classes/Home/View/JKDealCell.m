@@ -51,7 +51,7 @@
     NSComparisonResult result = [now compare:deal.publish_date];
     self.dealNewMark.hidden = (result == NSOrderedDescending) ? YES : NO;
     
-    JKLog(@"%@",deal.publish_date);
+//    JKLog(@"%@",deal.publish_date);
 }
 
 - (void)layoutSubviews {
