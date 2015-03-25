@@ -14,6 +14,16 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 // 活动监控器属性
 @property (nonatomic,weak) UIActivityIndicatorView *loadingView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *listPriceLabel;
+@property (weak, nonatomic) IBOutlet UIButton *collectionBtn;
+@property (weak, nonatomic) IBOutlet UIButton *soldNumberBtn;
+@property (weak, nonatomic) IBOutlet UIButton *leftTimeBtn;
+@property (weak, nonatomic) IBOutlet UIButton *anytimeRefuntableBtn;
+@property (weak, nonatomic) IBOutlet UIButton *expiresRefuntableBtn;
 
 @end
 
