@@ -21,6 +21,12 @@
 #import "JKFindDealsResult.h"
 #import "JKDeal.h"
 #import "JKDealCell.h"
+#import "MJRefresh.h"
+#import "JKDataTool.h"
+#import "UIView+AutoLayout.h"
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+MJ.h"
+#import "JKDetailViewController.h"
 
 @interface JKHomeViewController ()
 ///  导航栏上面的 item
@@ -37,6 +43,22 @@
 @property (nonatomic,copy) NSString *currentCategoryName;
 ///  当前的区域名称 - 发送给服务器
 @property (nonatomic,copy) NSString *currentRegionName;
+/**
+ *  当前页码
+ */
+@property (nonatomic,assign) int currentPage;
+/**
+ *  当前正在发送的网络请求
+ */
+@property (nonatomic,weak) DPRequest *currentRequest;
+/**
+ *  没有团购数据时显示的提醒图片
+ */
+@property (nonatomic,weak) UIImageView *noDataView;
+/**
+ *  搜索到的团购结果属性
+ */
+@property (nonatomic,strong) JKFindDealsResult *result;
 
 
 // 显示所有的团购
@@ -45,6 +67,20 @@
 @end
 
 @implementation JKHomeViewController
+
+- (UIImageView *)noDataView {
+    if (_noDataView == nil) {
+        UIImageView *noDataView = [[UIImageView alloc] init];
+        noDataView.image = [UIImage imageNamed:@"icon_deals_empty"];
+        noDataView.contentMode = UIViewContentModeCenter;
+        [self.view addSubview:noDataView];
+        // 添加约束
+        [noDataView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+        // 赋值记录
+        self.noDataView = noDataView;
+    }
+    return _noDataView;
+}
 
 - (NSMutableArray *)deals {
     if (_deals == nil) {
@@ -84,7 +120,21 @@ static NSString * const reuseIdentifier = @"Deal";
     // 设置导航栏右边
     [self setUpNavRight];
     
+    // 监听通知
     [self setUpNotes];
+    
+    // 添加刷新功能
+    [self setupRefresh];
+}
+
+- (void)setupRefresh {
+    [self.collectionView addHeaderWithTarget:self action:@selector(loadNewDeals)];
+    [self.collectionView addFooterWithTarget:self action:@selector(loadMoreDeals)];
+    self.collectionView.footerHidden = YES;
+    
+#warning TODO
+    self.currentCity = [JKDataTool cityWithName:@"北京"];
+    [self.collectionView headerBeginRefreshing];
 }
 
 #pragma mark - 添加通知
@@ -96,6 +146,9 @@ static NSString * const reuseIdentifier = @"Deal";
 }
 - (void)dealloc {
     [JKNoteCenter removeObserver:self];
+    
+    // 清除正在发送的请求
+    [self.currentRequest disconnect];
 }
 #pragma mark - 通知处理
 - (void)sortDidChange:(NSNotification *)note {
@@ -253,6 +306,11 @@ static NSString * const reuseIdentifier = @"Deal";
     // 如果没有选择城市，直接返回
     if (self.currentCity == nil) return;
     
+    // 取消上一个请求
+    [self.currentRequest disconnect];
+    // 结束尾部刷新
+    [self.collectionView footerEndRefreshing];
+    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     // 城市
     params[@"city"] = self.currentCity.name;
@@ -263,24 +321,75 @@ static NSString * const reuseIdentifier = @"Deal";
     // 排序
     if (self.currentSort) params[@"sort"] = @(self.currentSort.value);
     
-    
-    JKLog(@"params - %@",params);
-    [[DPAPI sharedInstance] request:@"v1/deal/find_deals" params:params success:^(id json) {
+    // 网络请求的方法，使用 self.currentRequest 记录
+    self.currentRequest = [[DPAPI sharedInstance] request:@"v1/deal/find_deals" params:params success:^(id json) {
         // 使用MJ框架解析json数据
         JKFindDealsResult *result = [JKFindDealsResult objectWithKeyValues:json];
+        self.result = result;
         
         // 移除旧数据
         [self.deals removeAllObjects];
-        
         // 添加新数据
         [self.deals addObjectsFromArray:result.deals];
-        
         // 刷新表格
         [self.collectionView reloadData];
-        
+        // 结束头部刷新
+        [self.collectionView headerEndRefreshing];
+        // 修改页面
+        self.currentPage = 1;
         
     } failure:^(NSError *error) {
-        JKLog(@"failure - %@",error);
+//        JKLog(@"failure - %@",error);
+        [MBProgressHUD showError:@"网络繁忙，请稍后再试"];
+        
+        // 结束头部刷新
+        [self.collectionView headerEndRefreshing];
+    }];
+}
+/**
+ *  加载更多团购
+ */
+- (void)loadMoreDeals {
+    if (self.currentCity == nil) return;
+    
+    // 取消上一个请求
+    [self.currentRequest disconnect];
+    [self.collectionView headerEndRefreshing];
+    
+    int tempPage = self.currentPage;
+    tempPage++;
+    
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    // 城市
+    params[@"city"] = self.currentCity.name;
+    // 区域
+    if (self.currentRegionName) params[@"region"] = self.currentRegionName;
+    // 类别
+    if (self.currentCategoryName) params[@"category"] = self.currentCategoryName;
+    // 排序
+    if (self.currentSort) params[@"sort"] = @(self.currentSort.value);
+    // 页码
+    params[@"page"] = @(tempPage);
+    
+    // 发送请求给服务器
+    self.currentRequest = [[DPAPI sharedInstance] request:@"v1/deal/find_deals" params:params success:^(id json) {
+        // 记录当前搜索到的团购结果 （需要定义一个属性） 注意：需要在加载新团购的请求中记录
+        self.result = [JKFindDealsResult objectWithKeyValues:json];
+        
+        // 添加新数据
+        [self.deals addObjectsFromArray:self.result.deals];
+        // 刷新表格
+        [self.collectionView reloadData];
+        // 结束刷新
+        [self.collectionView footerEndRefreshing];
+        // 修改页面
+        self.currentPage = tempPage;
+        
+    } failure:^(NSError *error) {
+        // 失败信息
+        [MBProgressHUD showError:@"网络繁忙，请稍后再试"];
+        // 刷新刷新
+        [self.collectionView footerEndRefreshing];
     }];
 }
 
@@ -303,19 +412,36 @@ static NSString * const reuseIdentifier = @"Deal";
 
 #pragma mark <UICollectionViewDataSource>
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.deals.count;
+    NSUInteger count = self.deals.count;
+    // 数组中有数据时就隐藏
+    self.noDataView.hidden = (count > 0);
+    // 服务器总量搜索数据与团购数组中一样时就隐藏
+    self.collectionView.footerHidden = (count == self.result.total_count);
+    
+    return count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     JKDealCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
     cell.deal = self.deals[indexPath.item];
-    
-    
     return cell;
 }
 
 #pragma mark <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    /**
+     *  点击某一个cell，弹出详情控制器
+     */
+    JKDetailViewController *detailVC = [[JKDetailViewController alloc] init];
+    detailVC.deal = self.deals[indexPath.item];
+    [self presentViewController:detailVC animated:YES completion:nil];
+    
+    
+}
 
 @end
+
+
+
+
