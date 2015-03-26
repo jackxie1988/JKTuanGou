@@ -13,7 +13,7 @@
 @implementation JKDeal
 
 + (NSDictionary *)replacedKeyFromPropertyName {
-    return @{@"desc" : @"description"};
+    return @{@"desc" : @"description",@"is_refundable" : @"restrictions.is_refundable"};
 }
 
 - (void)setList_price:(NSString *)list_price {

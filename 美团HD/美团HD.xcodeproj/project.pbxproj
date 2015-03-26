@@ -74,6 +74,7 @@
 		BCAE82141AC252BF00D1D38C /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAE820C1AC252BF00D1D38C /* UIView+MJExtension.m */; };
 		BCAE821A1AC26C2300D1D38C /* JKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAE82181AC26C2300D1D38C /* JKDetailViewController.m */; };
 		BCAE821B1AC26C2300D1D38C /* JKDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCAE82191AC26C2300D1D38C /* JKDetailViewController.xib */; };
+		BCAE821E1AC383FF00D1D38C /* JKGetSingleDealResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAE821D1AC383FF00D1D38C /* JKGetSingleDealResult.m */; };
 		BCB987E31ABA653600BFCBE5 /* JKCityResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCB987E21ABA653600BFCBE5 /* JKCityResultViewController.m */; };
 		BCCAA5131AAFC983007D12E3 /* JKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5121AAFC983007D12E3 /* JKSortViewController.m */; };
 		BCCAA5161AAFC9A8007D12E3 /* JKCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCCAA5151AAFC9A8007D12E3 /* JKCategoryViewController.m */; };
@@ -228,6 +229,8 @@
 		BCAE82171AC26C2300D1D38C /* JKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKDetailViewController.h; sourceTree = "<group>"; };
 		BCAE82181AC26C2300D1D38C /* JKDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKDetailViewController.m; sourceTree = "<group>"; };
 		BCAE82191AC26C2300D1D38C /* JKDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKDetailViewController.xib; sourceTree = "<group>"; };
+		BCAE821C1AC383FF00D1D38C /* JKGetSingleDealResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKGetSingleDealResult.h; sourceTree = "<group>"; };
+		BCAE821D1AC383FF00D1D38C /* JKGetSingleDealResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKGetSingleDealResult.m; sourceTree = "<group>"; };
 		BCB987E11ABA653600BFCBE5 /* JKCityResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKCityResultViewController.h; sourceTree = "<group>"; };
 		BCB987E21ABA653600BFCBE5 /* JKCityResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKCityResultViewController.m; sourceTree = "<group>"; };
 		BCCAA5111AAFC983007D12E3 /* JKSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSortViewController.h; sourceTree = "<group>"; };
@@ -547,6 +550,8 @@
 				BCEBE0DF1ABB045B00CEF0D8 /* JKFindDealsResult.m */,
 				BCEBE0E11ABB046700CEF0D8 /* JKDeal.h */,
 				BCEBE0E21ABB046700CEF0D8 /* JKDeal.m */,
+				BCAE821C1AC383FF00D1D38C /* JKGetSingleDealResult.h */,
+				BCAE821D1AC383FF00D1D38C /* JKGetSingleDealResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -752,6 +757,7 @@
 				BC2B3C261AAEF67700DFA275 /* JKHomeViewController.m in Sources */,
 				BC5B05D71ABE97F800E1096D /* UIImage+GIF.m in Sources */,
 				BCAE821A1AC26C2300D1D38C /* JKDetailViewController.m in Sources */,
+				BCAE821E1AC383FF00D1D38C /* JKGetSingleDealResult.m in Sources */,
 				BCAE81FB1AC2527700D1D38C /* MBProgressHUD.m in Sources */,
 				BC9497E21AB2915800C6CFD5 /* MJType.m in Sources */,
 				BC5B05D31ABE97F800E1096D /* SDWebImageDownloaderOperation.m in Sources */,

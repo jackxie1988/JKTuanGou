@@ -37,6 +37,10 @@
 @property (nonatomic,copy) NSString *deal_h5_url;
 
 
+/** 是否支持随时退款，0：不是，1：是 */
+@property (nonatomic,assign) BOOL is_refundable;
+
+
 @end
 
 
